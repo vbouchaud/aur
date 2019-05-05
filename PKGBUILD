@@ -24,6 +24,8 @@ sha256sums_aarch64=(
   '7fec91af78e9548df306f0ec43bea527c8c10cc3a9682c33e971c8522a7fcded'
 )
 
+
+
 source_x86_64=(
   "https://github.com/containernetworking/plugins/releases/download/v${pkgver}/cni-plugins-amd64-v${pkgver}.tgz"
 )
@@ -41,9 +43,9 @@ source_aarch64=(
 )
 
 package() {
-  cd "$srcdir"
-  mkdir -p "$pkgdir"/opt/cni/bin
-  install -Dm755 * "$pkgdir"/opt/cni/bin
-  rm "$pkgdir"/opt/cni/bin/cni-plugins-amd64-v${pkgver}.tgz
+  cd "${srcdir}"
+  mkdir -p "${pkgdir}/opt/cni/bin"
+  install -Dm755 * "${pkgdir}/opt/cni/bin"
+  find "${pkgdir}/opt/cni/bin/" -name "cni-plugins-*.tgz" -delete
 }
 
