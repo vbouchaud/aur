@@ -2,23 +2,23 @@
 
 pkgname=cni-plugins-bin
 pkgdesc="Container Network Interface - networking for Linux containers"
-pkgver=0.8.0
+pkgver=0.8.1
 pkgrel=0
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="https://github.com/containernetworking/plugins"
 license=('apache')
 
 sha256sums_x86_64=(
-  'b579afff0af402d406d2af6664eb4a53a1040078edab297e9b306084ddd320af'
+  'e9bfc78acd3ae71be77eb8f3e890cc9078a33cc3797703b8ff2fc3077a232252'
 )
 sha256sums_armv7l=(
-  '68a3c590fa8af1003db2bcda0b4a8f53c6c14a7b1ab8e2c32e9c83a24534d21e'
+  'acde854e3def3c776c532ae521c19d8784534918cc56449ff16945a2909bff6d'
 )
 sha256sums_armv7h=(
   "${sha256sums_armv7l}"
 )
 sha256sums_aarch64=(
-  'a9abd57bdc7e3694f44b75a1f997f9117667338449e9f13173337b3f9762a9bd'
+  'acde854e3def3c776c532ae521c19d8784534918cc56449ff16945a2909bff6d'
 )
 
 source_x86_64=(
