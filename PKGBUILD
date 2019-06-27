@@ -1,9 +1,9 @@
-# Maintainer: Wes Jackson <icebal dot 7 at gmail dot com>
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
 # https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages
 
 pkgname=kubeadm-bin
 pkgdesc="Kubernetes.io kubeadm binary"
-pkgver=1.14.1
+pkgver=1.14.2
 pkgrel=0
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
@@ -12,16 +12,16 @@ depends=('kubelet-bin')
 conflicts=('kubernetes' 'kubernetes-bin')
 provides=('kubeadm')
 sha256sums_x86_64=(
-  'eb746d66f6ef69232e09a6800c570e1c86d9a242f3491843efc6f6c0e3803803'
+  '7258f899e6bd237d9fbdd029617ab2396606c7ecbd94ee4a6098e44861942415'
 )
 sha256sums_armv7l=(
-  '4575e8d2ad2f8e0fbd2ea1044f3f502b10512a8cc8522e107d4af7e719cddf27'
+  '66f9a2efc21c9e1bbe4ea53eb9d52697ae4dff15456bb9e3a0656f8f26123ade'
 )
 sha256sums_armv7h=(
   "${sha256sums_armv7l}"
 )
 sha256sums_aarch64=(
-  'afe97e3ec07b5fac140bea8b61d262817b68e8249f6ef5b6c0d85ae110a14a3d'
+  '73991e1b8114c8c833b41528d6ca7bdfdd61db7b0011b5bd5ea1d823888dcbdc'
 )
 source_x86_64=(
   "https://packages.cloud.google.com/apt/pool/kubeadm_${pkgver}-00_amd64_${sha256sums_x86_64}.deb"
