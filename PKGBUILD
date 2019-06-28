@@ -1,28 +1,43 @@
-# Maintainer: larte <lauri.arte@gmail.com>
-# Contributor: Maxwell Pray a.k.a. Synthead <synthead@gmail.com>
-# Contributor: gun1x <gheorghe@linux.com>
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
 
 pkgname=kubectl-bin
 pkgdesc="Kubernetes.io client binary"
-pkgver=1.14.1
-pkgrel=1
-arch=('i686' 'x86_64' 'aarch64')
+pkgver=1.14.2
+pkgrel=0
+arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
-conflicts=('kubectl' 'kubernetes>=1.4.6')
-provides=('kubectl=$pkgver')
-_kubectl_file=kubectl-$pkgver
-source_i686=($_kubectl_file::https://storage.googleapis.com/kubernetes-release/release/v$pkgver/bin/linux/386/kubectl)
-source_x86_64=($_kubectl_file::https://storage.googleapis.com/kubernetes-release/release/v$pkgver/bin/linux/amd64/kubectl)
-source_aarch64=($_kubectl_file::https://storage.googleapis.com/kubernetes-release/release/v$pkgver/bin/linux/arm64/kubectl)
-sha256sums_i686=('76cc25f2079e2b350d97fa31edbcd3ae5e6f68497ceb92adf53c3a5f9322ed8c')
-sha256sums_x86_64=('829c00f0401a0887154d640349a974055a87199714a8d7d741d635ed20c70ee9')
-sha256sums_aarch64=('ee4d4e8acb188b8c39762744270452f196d5c28962dfa669527238817e40bd10')
+conflicts=('kubectl')
+provides=('kubectl')
+
+sha256sums_x86_64=(
+  '98c512ffae2ab4b42b86ba3ae51c9a3621828867c395f6729931d977b5c51ddb'
+)
+sha256sums_armv7l=(
+  '23503bf84c14a0cb64d1762e71b8a58d092ef95b0b8d79e3483224a625aa617a'
+)
+sha256sums_armv7h=(
+  "${sha256sums_armv7l}"
+)
+sha256sums_aarch64=(
+  'bd549aa48cee78e573ab0426ddc14dd8cc6758e14cc3d0873ccfbbf606ec9ac8'
+)
+
+source_x86_64=(
+  "https://packages.cloud.google.com/apt/pool/kubectl_${pkgver}-00_amd64_${sha256sums_x86_64}.deb"
+)
+source_armv7l=(
+  "https://packages.cloud.google.com/apt/pool/kubectl_${pkgver}-00_armhf_${sha256sums_armv7l}.deb"
+)
+source_armv7h=(
+  "https://packages.cloud.google.com/apt/pool/kubectl_${pkgver}-00_armhf_${sha256sums_armv7h}.deb"
+)
+source_aarch64=(
+  "https://packages.cloud.google.com/apt/pool/kubectl_${pkgver}-00_arm64_${sha256sums_aarch64}.deb"
+)
 
 package() {
-  install -Dm 755 "$srcdir/$_kubectl_file" "$pkgdir/usr/bin/kubectl"
-  install -d 755 "$pkgdir/usr/share/bash-completion/completions"
-  install -d 755 "$pkgdir/usr/share/zsh/site-functions"
-  "$pkgdir/usr/bin/kubectl" completion bash > "$pkgdir/usr/share/bash-completion/completions/kubectl"
-  "$pkgdir/usr/bin/kubectl" completion zsh >  "$pkgdir/usr/share/zsh/site-functions/_kubectl"
+  tar -vxf data.tar.xz
+
+  install -D -m0755 "./usr/bin/kubectl" "${pkgdir}/usr/bin/kubectl"
 }
