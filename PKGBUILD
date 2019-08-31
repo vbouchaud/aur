@@ -3,7 +3,7 @@
 pkgname=kubectl-bin
 pkgdesc="Kubernetes.io client binary"
 pkgver=1.15.3
-pkgrel=0
+pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
@@ -39,5 +39,8 @@ source_aarch64=(
 package() {
   tar -vxf data.tar.xz
 
-  install -D -m0755 "./usr/bin/kubectl" "${pkgdir}/usr/bin/kubectl"
+  install -D -m0755 "${srcdir}/usr/bin/kubectl" "${pkgdir}/usr/bin/kubectl"
+
+  "${pkgdir}/usr/bin/kubectl" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/kubectl"
+  "${pkgdir}/usr/bin/kubectl" completion zsh | install -Dm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_kubectl"
 }

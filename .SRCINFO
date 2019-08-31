@@ -1,7 +1,7 @@
 pkgbase = kubectl-bin
 	pkgdesc = Kubernetes.io client binary
 	pkgver = 1.15.3
-	pkgrel = 0
+	pkgrel = 1
 	url = http://kubernetes.io
 	arch = x86_64
 	arch = armv7l
