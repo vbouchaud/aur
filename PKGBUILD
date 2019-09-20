@@ -4,12 +4,12 @@
 pkgname=kubeadm-bin
 pkgdesc="Kubernetes.io kubeadm binary"
 pkgver=1.16.0
-pkgrel=0
+pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
-depends=('kubelet-bin')
-conflicts=('kubernetes' 'kubernetes-bin')
+depends=('kubelet' 'kubectl' 'cri-tools' 'cni-plugins')
+conflicts=('kubernetes' 'kubernetes-bin' 'kubeadm')
 provides=('kubeadm')
 sha256sums_x86_64=(
   'b0fa26a7ac8cd90e9c3e388282828f320766264acc307b5bf45ffa79b5abed0c'
