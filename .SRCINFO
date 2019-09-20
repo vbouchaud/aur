@@ -1,7 +1,7 @@
 pkgbase = cri-tools-bin
 	pkgdesc = Container Runtime Interface Tools Binaries that interact with the container runtime through the container runtime interface
 	pkgver = 1.16.0
-	pkgrel = 0
+	pkgrel = 1
 	url = http://kubernetes.io
 	arch = x86_64
 	arch = armv7l

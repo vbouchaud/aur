@@ -4,7 +4,7 @@
 pkgname=cri-tools-bin
 pkgdesc="Container Runtime Interface Tools Binaries that interact with the container runtime through the container runtime interface"
 pkgver=1.16.0
-pkgrel=0
+pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
@@ -43,7 +43,7 @@ debug: false
 EOF
 
   install -D -m0755 "${srcdir}/crictl" "${pkgdir}/usr/bin/crictl"
-  install -D -m0644 "${srcdir}/crictl.yaml" "${pkgdir}/etc/crictl"
+  install -D -m0644 "${srcdir}/crictl.yaml" "${pkgdir}/etc/crictl.yaml"
 
   "${pkgdir}/usr/bin/crictl" completion bash | install -Dm644 /dev/stdin "${pkgdir}/usr/share/bash-completion/completions/crictl"
   "${pkgdir}/usr/bin/crictl" completion zsh | install -Dm644 /dev/stdin "${pkgdir}/usr/share/zsh/site-functions/_crictl"
