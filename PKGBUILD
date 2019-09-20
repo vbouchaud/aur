@@ -3,11 +3,12 @@
 pkgname=kubelet-bin
 pkgdesc="Kubernetes.io kubelet binary"
 pkgver=1.16.0
-pkgrel=0
+pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
-conflicts=('kubernetes' 'kubernetes-bin')
+depends=('iptables' 'cni-plugins' 'iproute2' 'socat' 'libutil-linux' 'ethtool' 'ebtables' 'conntrack-tools')
+conflicts=('kubernetes' 'kubernetes-bin' 'kubelet')
 provides=('kubelet')
 sha256sums_x86_64=(
   'e919939f5dad4bc7b0047fe2cf2870ab1946e87f948ab7f75bc1d63305436664'
