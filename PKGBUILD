@@ -10,6 +10,7 @@ url="http://kubernetes.io"
 license=('apache')
 conflicts=('cri-tools' 'crictl' 'crictl-bin')
 provides=('cri-tools')
+
 sha256sums_x86_64=(
   'a3eefa10a483c643ad85aee3d7832a720976ef7e80dde46b212eaaacd7d09512'
 )
@@ -22,6 +23,7 @@ sha256sums_armv7h=(
 sha256sums_aarch64=(
   'aa118c31d6f6fd2d24bb2de4a33598a14a5952e1d01f93d5c3267c2b5334743b'
 )
+
 source_x86_64=(
   "https://github.com/kubernetes-sigs/cri-tools/releases/download/v${pkgver}/crictl-v${pkgver}-linux-amd64.tar.gz"
 )
@@ -34,6 +36,7 @@ source_armv7h=(
 source_aarch64=(
   "https://github.com/kubernetes-sigs/cri-tools/releases/download/v${pkgver}/crictl-v${pkgver}-linux-arm64.tar.gz"
 )
+
 package() {
   cat > "${srcdir}/crictl.yaml" <<EOF
 runtime-endpoint: unix:///run/containerd/containerd.sock
