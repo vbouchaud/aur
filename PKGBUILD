@@ -11,6 +11,7 @@ license=('apache')
 depends=('kubelet' 'kubectl' 'cri-tools' 'cni-plugins')
 conflicts=('kubernetes' 'kubernetes-bin' 'kubeadm')
 provides=('kubeadm')
+
 sha256sums_x86_64=(
   'b0fa26a7ac8cd90e9c3e388282828f320766264acc307b5bf45ffa79b5abed0c'
 )
@@ -23,6 +24,7 @@ sha256sums_armv7h=(
 sha256sums_aarch64=(
   'ed1b1e178382154da8ff9d12afcde4af56865a4935904a83217d28909fb7e30d'
 )
+
 source_x86_64=(
   "https://packages.cloud.google.com/apt/pool/kubeadm_${pkgver}-00_amd64_${sha256sums_x86_64}.deb"
 )
@@ -30,13 +32,15 @@ source_armv7l=(
   "https://packages.cloud.google.com/apt/pool/kubeadm_${pkgver}-00_armhf_${sha256sums_armv7l}.deb"
 )
 source_armv7h=(
-  "https://packages.cloud.google.com/apt/pool/kubeadm_${pkgver}-00_armhf_${sha256sums_armv7h}.deb"
+  "${source_armv7l}"
 )
 source_aarch64=(
   "https://packages.cloud.google.com/apt/pool/kubeadm_${pkgver}-00_arm64_${sha256sums_aarch64}.deb"
 )
+
 package() {
   tar -vxf data.tar.xz
-  install -D -m0644 "./etc/systemd/system/kubelet.service.d/10-kubeadm.conf" "${pkgdir}/etc/systemd/system/kubelet.service.d/10-kubeadm.conf"
-  install -D -m0755 "./usr/bin/kubeadm" "${pkgdir}/usr/bin/kubeadm"
+
+  install -D -m0644 "${srcdir}/etc/systemd/system/kubelet.service.d/10-kubeadm.conf" "${pkgdir}/etc/systemd/system/kubelet.service.d/10-kubeadm.conf"
+  install -D -m0755 "${srcdir}/usr/bin/kubeadm" "${pkgdir}/usr/bin/kubeadm"
 }
