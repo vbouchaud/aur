@@ -1,7 +1,7 @@
 pkgbase = kubelet-bin
 	pkgdesc = Kubernetes.io kubelet binary
 	pkgver = 1.16.0
-	pkgrel = 1
+	pkgrel = 2
 	url = http://kubernetes.io
 	arch = x86_64
 	arch = armv7l
@@ -15,6 +15,7 @@ pkgbase = kubelet-bin
 	depends = libutil-linux
 	depends = ethtool
 	depends = ebtables
+	depends = arptables
 	depends = conntrack-tools
 	provides = kubelet
 	conflicts = kubernetes
