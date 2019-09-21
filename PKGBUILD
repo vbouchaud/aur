@@ -30,7 +30,7 @@ source_armv7l=(
   "https://packages.cloud.google.com/apt/pool/kubectl_${pkgver}-00_armhf_${sha256sums_armv7l}.deb"
 )
 source_armv7h=(
-  "https://packages.cloud.google.com/apt/pool/kubectl_${pkgver}-00_armhf_${sha256sums_armv7h}.deb"
+  "${source_armv7l}"
 )
 source_aarch64=(
   "https://packages.cloud.google.com/apt/pool/kubectl_${pkgver}-00_arm64_${sha256sums_aarch64}.deb"
@@ -41,6 +41,6 @@ package() {
 
   install -D -m0755 "${srcdir}/usr/bin/kubectl" "${pkgdir}/usr/bin/kubectl"
 
-  "${pkgdir}/usr/bin/kubectl" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/kubectl"
-  "${pkgdir}/usr/bin/kubectl" completion zsh | install -Dm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_kubectl"
+  "${pkgdir}/usr/bin/kubectl" completion bash | install -Dm644 /dev/stdin "${pkgdir}/usr/share/bash-completion/completions/kubectl"
+  "${pkgdir}/usr/bin/kubectl" completion zsh | install -Dm644 /dev/stdin "${pkgdir}/usr/share/zsh/site-functions/_kubectl"
 }
