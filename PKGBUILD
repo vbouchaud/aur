@@ -1,4 +1,5 @@
 # Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+# https://github.com/containernetworking/plugins/releases
 
 pkgname=cni-plugins-bin
 pkgdesc="Container Network Interface - networking for Linux containers"
@@ -30,7 +31,7 @@ source_armv7l=(
   "https://github.com/containernetworking/plugins/releases/download/v${pkgver}/cni-plugins-linux-arm-v${pkgver}.tgz"
 )
 source_armv7h=(
-  "https://github.com/containernetworking/plugins/releases/download/v${pkgver}/cni-plugins-linux-arm-v${pkgver}.tgz"
+  "${source_armv7l}"
 )
 source_aarch64=(
   "https://github.com/containernetworking/plugins/releases/download/v${pkgver}/cni-plugins-linux-arm64-v${pkgver}.tgz"
