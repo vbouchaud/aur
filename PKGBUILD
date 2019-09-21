@@ -38,15 +38,7 @@ source_aarch64=(
 )
 
 package() {
-  cat > "${srcdir}/crictl.yaml" <<EOF
-runtime-endpoint: unix:///run/containerd/containerd.sock
-image-endpoint: unix:///run/containerd/containerd.sock
-timeout: 10
-debug: false
-EOF
-
   install -D -m0755 "${srcdir}/crictl" "${pkgdir}/usr/bin/crictl"
-  install -D -m0644 "${srcdir}/crictl.yaml" "${pkgdir}/etc/crictl.yaml"
 
   "${pkgdir}/usr/bin/crictl" completion bash | install -Dm644 /dev/stdin "${pkgdir}/usr/share/bash-completion/completions/crictl"
   "${pkgdir}/usr/bin/crictl" completion zsh | install -Dm644 /dev/stdin "${pkgdir}/usr/share/zsh/site-functions/_crictl"
