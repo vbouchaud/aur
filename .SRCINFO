@@ -1,6 +1,6 @@
 pkgbase = kubelet-bin
 	pkgdesc = Kubernetes.io kubelet binary
-	pkgver = 1.16.1
+	pkgver = 1.16.2
 	pkgrel = 1
 	url = http://kubernetes.io
 	arch = x86_64
@@ -23,14 +23,14 @@ pkgbase = kubelet-bin
 	conflicts = kubernetes
 	conflicts = kubernetes-bin
 	conflicts = kubelet
-	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubelet_1.16.1-00_amd64_ae1d16ae8e2b73a3224a41c0730be2d812870b7cb7307a8f02d13038d572d05d.deb
-	sha256sums_x86_64 = ae1d16ae8e2b73a3224a41c0730be2d812870b7cb7307a8f02d13038d572d05d
-	source_armv7l = https://packages.cloud.google.com/apt/pool/kubelet_1.16.1-00_armhf_63b68c6a5ad98c999d0dccb726de53547545fa543a09cf3ef54b46e8d4005d1b.deb
-	sha256sums_armv7l = 63b68c6a5ad98c999d0dccb726de53547545fa543a09cf3ef54b46e8d4005d1b
-	source_armv7h = https://packages.cloud.google.com/apt/pool/kubelet_1.16.1-00_armhf_63b68c6a5ad98c999d0dccb726de53547545fa543a09cf3ef54b46e8d4005d1b.deb
-	sha256sums_armv7h = 63b68c6a5ad98c999d0dccb726de53547545fa543a09cf3ef54b46e8d4005d1b
-	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubelet_1.16.1-00_arm64_1f97118d86057e90c61385128a739c4922f900bcfbb6c351487a331cdc439395.deb
-	sha256sums_aarch64 = 1f97118d86057e90c61385128a739c4922f900bcfbb6c351487a331cdc439395
+	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubelet_1.16.2-00_amd64_f36a759a47ab98ec48e32503c4934c9cb83c323108b2c0a7aaf4c964cf62e5c1.deb
+	sha256sums_x86_64 = f36a759a47ab98ec48e32503c4934c9cb83c323108b2c0a7aaf4c964cf62e5c1
+	source_armv7l = https://packages.cloud.google.com/apt/pool/kubelet_1.16.2-00_armhf_2a167b56901e71c3797aa57837d3219d93d4f29570927a6a39c738745c05233a.deb
+	sha256sums_armv7l = 2a167b56901e71c3797aa57837d3219d93d4f29570927a6a39c738745c05233a
+	source_armv7h = https://packages.cloud.google.com/apt/pool/kubelet_1.16.2-00_armhf_2a167b56901e71c3797aa57837d3219d93d4f29570927a6a39c738745c05233a.deb
+	sha256sums_armv7h = 2a167b56901e71c3797aa57837d3219d93d4f29570927a6a39c738745c05233a
+	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubelet_1.16.2-00_arm64_56146e3523727a158ad96093e2e1a2e85b7b1a793ce21264c798b7c7d2a228f5.deb
+	sha256sums_aarch64 = 56146e3523727a158ad96093e2e1a2e85b7b1a793ce21264c798b7c7d2a228f5
 
 pkgname = kubelet-bin
 
