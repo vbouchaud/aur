@@ -4,11 +4,17 @@
 pkgname=kubelet-bin
 pkgdesc="Kubernetes.io kubelet binary"
 pkgver=1.18.1
-pkgrel=1
+pkgrel=2
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
 depends=('iptables' 'cni-plugins' 'iproute2' 'socat' 'libutil-linux' 'ethtool' 'ebtables' 'arptables' 'conntrack-tools' 'ipset' 'ipvsadm')
+optdepends=(
+  'docker: use docker as kubernetes runtime'
+  'containerd: industry-standard container runtime'
+  'cri-o: open container initiative-based implementation of kubernetes container runtime interface'
+  'frakti: hypervisor-based container runtime for kubernetes'
+)
 conflicts=('kubernetes' 'kubernetes-bin' 'kubelet')
 provides=('kubelet')
 
