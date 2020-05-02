@@ -4,15 +4,15 @@
 pkgname=kubeadm-bin
 pkgdesc="Kubernetes.io kubeadm binary"
 pkgver=1.18.2
-pkgrel=2
+pkgrel=3
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
 depends=(
-    'kubelet>=1.13.0'
-    'kubectl>=1.13.0'
-    'cri-tools>=1.13.0'
-    'cni-plugins>=0.7.5'
+    'kubelet'
+    'kubectl'
+    'cri-tools'
+    'cni-plugins'
 )
 conflicts=('kubernetes' 'kubernetes-bin' 'kubeadm')
 provides=('kubeadm')

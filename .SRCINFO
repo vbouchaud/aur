@@ -1,17 +1,17 @@
 pkgbase = kubeadm-bin
 	pkgdesc = Kubernetes.io kubeadm binary
 	pkgver = 1.18.2
-	pkgrel = 2
+	pkgrel = 3
 	url = http://kubernetes.io
 	arch = x86_64
 	arch = armv7l
 	arch = armv7h
 	arch = aarch64
 	license = apache
-	depends = kubelet>=1.13.0
-	depends = kubectl>=1.13.0
-	depends = cri-tools>=1.13.0
-	depends = cni-plugins>=0.7.5
+	depends = kubelet
+	depends = kubectl
+	depends = cri-tools
+	depends = cni-plugins
 	provides = kubeadm
 	conflicts = kubernetes
 	conflicts = kubernetes-bin
