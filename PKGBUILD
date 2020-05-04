@@ -4,13 +4,13 @@
 pkgname=kubelet-bin
 pkgdesc="Kubernetes.io kubelet binary"
 pkgver=1.18.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
 depends=(
-    'iptables>=1:1.4.21'
-    'cni-plugins>=0.7.5'
+    'iptables'
+    'cni-plugins'
     'iproute2'
     'socat'
     'libutil-linux'

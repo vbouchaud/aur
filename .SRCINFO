@@ -1,15 +1,15 @@
 pkgbase = kubelet-bin
 	pkgdesc = Kubernetes.io kubelet binary
 	pkgver = 1.18.2
-	pkgrel = 1
+	pkgrel = 2
 	url = http://kubernetes.io
 	arch = x86_64
 	arch = armv7l
 	arch = armv7h
 	arch = aarch64
 	license = apache
-	depends = iptables>=1:1.4.21
-	depends = cni-plugins>=0.7.5
+	depends = iptables
+	depends = cni-plugins
 	depends = iproute2
 	depends = socat
 	depends = libutil-linux
