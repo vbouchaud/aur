@@ -3,8 +3,8 @@
 
 pkgname=kubelet-bin
 pkgdesc="Kubernetes.io kubelet binary"
-pkgver=1.18.2
-pkgrel=2
+pkgver=1.18.3
+pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
@@ -31,16 +31,16 @@ conflicts=('kubernetes' 'kubernetes-bin' 'kubelet')
 provides=('kubelet')
 
 sha256sums_x86_64=(
-  '1fb09333a48950c243d165ba9b4989a99ad8130d135d8b18e72bcb151359d6fe'
+  'fb432bb5f4ff7c42123ba2d8f961b57378d8e1f9d571e1ee05d9b92f3bb0114a'
 )
 sha256sums_armv7l=(
-  '97667f9ee567c11f420b20350098a37dbcb28ae22a0898ddeec8288a6d9ee6de'
+  'cd547537e47446f1b84c052394206b3607565ed33012f3c034bb05ab3adef5ed'
 )
 sha256sums_armv7h=(
   "${sha256sums_armv7l}"
 )
 sha256sums_aarch64=(
-  'dc9346b9c609b3579a0e5c571c41e0abe1d732452cc0ae96c16a88dd5092f82f'
+  '0a8fefabe525a6e38abb2d98fe6cf3dcb2ab8dcc2d432fa8f7388012ee852fef'
 )
 
 source_x86_64=(
