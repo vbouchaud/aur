@@ -1,6 +1,6 @@
 pkgbase = kubeadm-bin
 	pkgdesc = Kubernetes.io kubeadm binary
-	pkgver = 1.18.4
+	pkgver = 1.18.5
 	pkgrel = 1
 	url = http://kubernetes.io
 	arch = x86_64
@@ -16,14 +16,14 @@ pkgbase = kubeadm-bin
 	conflicts = kubernetes
 	conflicts = kubernetes-bin
 	conflicts = kubeadm
-	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.4-00_amd64_9c3d8514120d62b90e19d8ec13947fcbc9d56bed21d36dd3d2d314a4cd13f6bb.deb
-	sha256sums_x86_64 = 9c3d8514120d62b90e19d8ec13947fcbc9d56bed21d36dd3d2d314a4cd13f6bb
-	source_armv7l = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.4-00_armhf_360b5e296cc10328e11ee6639cc09ed98aae0adee7f762bd8f513a252fd6bbbc.deb
-	sha256sums_armv7l = 360b5e296cc10328e11ee6639cc09ed98aae0adee7f762bd8f513a252fd6bbbc
-	source_armv7h = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.4-00_armhf_360b5e296cc10328e11ee6639cc09ed98aae0adee7f762bd8f513a252fd6bbbc.deb
-	sha256sums_armv7h = 360b5e296cc10328e11ee6639cc09ed98aae0adee7f762bd8f513a252fd6bbbc
-	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.4-00_arm64_5a6d0a6a4b7bb89d5d2385ad615cb068b05a3430c46ed874773a569b8d46bb06.deb
-	sha256sums_aarch64 = 5a6d0a6a4b7bb89d5d2385ad615cb068b05a3430c46ed874773a569b8d46bb06
+	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.5-00_amd64_32c7f12d77a03c9522146f4ee404a61c4fff0f2fe0a7426e34ee0137062bf659.deb
+	sha256sums_x86_64 = 32c7f12d77a03c9522146f4ee404a61c4fff0f2fe0a7426e34ee0137062bf659
+	source_armv7l = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.5-00_armhf_c3f034b4e90622082cde37156c2649a758009c8840c8574c55bc418031b4ae2b.deb
+	sha256sums_armv7l = c3f034b4e90622082cde37156c2649a758009c8840c8574c55bc418031b4ae2b
+	source_armv7h = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.5-00_armhf_c3f034b4e90622082cde37156c2649a758009c8840c8574c55bc418031b4ae2b.deb
+	sha256sums_armv7h = c3f034b4e90622082cde37156c2649a758009c8840c8574c55bc418031b4ae2b
+	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.18.5-00_arm64_368e1611b4f8aef216b27800265866b82bde748e2d8d3dcb3a87604b8bd335d5.deb
+	sha256sums_aarch64 = 368e1611b4f8aef216b27800265866b82bde748e2d8d3dcb3a87604b8bd335d5
 
 pkgname = kubeadm-bin
 
