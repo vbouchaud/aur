@@ -3,7 +3,7 @@
 
 pkgname=cri-tools-bin
 pkgdesc="Container Runtime Interface Tools Binaries that interact with the container runtime through the container runtime interface"
-pkgver=1.18.0
+pkgver=1.19.0
 pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
@@ -12,16 +12,16 @@ conflicts=('cri-tools' 'crictl' 'crictl-bin')
 provides=('cri-tools')
 
 sha256sums_x86_64=(
-  '876dd2b3d0d1c2590371f940fb1bf1fbd5f15aebfbe456703ee465d959700f4a'
+  '87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae'
 )
 sha256sums_armv7l=(
-  'd420925d10b47a234b7e51e9cf1039c3c09f2703945a99435549fcdd7487ae3a'
+  'b72fd3c4b35f60f5db2cfcd8e932f6000cf9c2978b54adfcf60ee5e2d452e92f'
 )
 sha256sums_armv7h=(
   "${sha256sums_armv7l}"
 )
 sha256sums_aarch64=(
-  '95ba32c47ad690b1e3e24f60255273dd7d176e62b1a0b482e5b44a7c31639979'
+  'ec040d14ca03e8e4e504a85dae5353e04b5d9d8aea3df68699258992c0eb8d88'
 )
 
 source_x86_64=(
