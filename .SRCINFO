@@ -1,6 +1,6 @@
 pkgbase = kubectl-bin
 	pkgdesc = Kubernetes.io client binary
-	pkgver = 1.19.2
+	pkgver = 1.19.3
 	pkgrel = 1
 	url = http://kubernetes.io
 	arch = x86_64
@@ -10,14 +10,14 @@ pkgbase = kubectl-bin
 	license = apache
 	provides = kubectl
 	conflicts = kubectl
-	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubectl_1.19.2-00_amd64_ca9f3550ad7f8b1a785b670284a18a570b15be8c2b60b62822c51fdf51633bdb.deb
-	sha256sums_x86_64 = ca9f3550ad7f8b1a785b670284a18a570b15be8c2b60b62822c51fdf51633bdb
-	source_armv7l = https://packages.cloud.google.com/apt/pool/kubectl_1.19.2-00_armhf_ac732e0c69f72ef97b32cdf51aa58758fdd7c91186a8e0fe31f5fe463f3dad91.deb
-	sha256sums_armv7l = ac732e0c69f72ef97b32cdf51aa58758fdd7c91186a8e0fe31f5fe463f3dad91
-	source_armv7h = https://packages.cloud.google.com/apt/pool/kubectl_1.19.2-00_armhf_ac732e0c69f72ef97b32cdf51aa58758fdd7c91186a8e0fe31f5fe463f3dad91.deb
-	sha256sums_armv7h = ac732e0c69f72ef97b32cdf51aa58758fdd7c91186a8e0fe31f5fe463f3dad91
-	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubectl_1.19.2-00_arm64_502022db2ea8570ac5fb870b3f4e1230a482210676dd20a266960c1f1490488a.deb
-	sha256sums_aarch64 = 502022db2ea8570ac5fb870b3f4e1230a482210676dd20a266960c1f1490488a
+	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubectl_1.19.3-00_amd64_8b135a2c8ab59784a12ae239cdfd80989d7d08d1da4449522c475cea1025eaa3.deb
+	sha256sums_x86_64 = 8b135a2c8ab59784a12ae239cdfd80989d7d08d1da4449522c475cea1025eaa3
+	source_armv7l = https://packages.cloud.google.com/apt/pool/kubectl_1.19.3-00_armhf_875e50e5b283dccd9f4871192b4417fc22c909b1ae99e873ab1230c2f3ff7163.deb
+	sha256sums_armv7l = 875e50e5b283dccd9f4871192b4417fc22c909b1ae99e873ab1230c2f3ff7163
+	source_armv7h = https://packages.cloud.google.com/apt/pool/kubectl_1.19.3-00_armhf_875e50e5b283dccd9f4871192b4417fc22c909b1ae99e873ab1230c2f3ff7163.deb
+	sha256sums_armv7h = 875e50e5b283dccd9f4871192b4417fc22c909b1ae99e873ab1230c2f3ff7163
+	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubectl_1.19.3-00_arm64_990e33da2028651c8977a632fc5d4a08b78c4de3e4e76e64ea6fc29a289ad9c0.deb
+	sha256sums_aarch64 = 990e33da2028651c8977a632fc5d4a08b78c4de3e4e76e64ea6fc29a289ad9c0
 
 pkgname = kubectl-bin
 
