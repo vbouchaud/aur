@@ -1,7 +1,7 @@
 pkgbase = kubelet-bin
 	pkgdesc = Kubernetes.io kubelet binary
-	pkgver = 1.19.2
-	pkgrel = 2
+	pkgver = 1.19.3
+	pkgrel = 1
 	url = http://kubernetes.io
 	arch = x86_64
 	arch = armv7l
@@ -27,14 +27,14 @@ pkgbase = kubelet-bin
 	conflicts = kubernetes
 	conflicts = kubernetes-bin
 	conflicts = kubelet
-	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubelet_1.19.2-00_amd64_fa43b848ed839e54df6d9b182e705b565947c4f5eac6ecdd0837ae7061886e0b.deb
-	sha256sums_x86_64 = fa43b848ed839e54df6d9b182e705b565947c4f5eac6ecdd0837ae7061886e0b
-	source_armv7l = https://packages.cloud.google.com/apt/pool/kubelet_1.19.2-00_armhf_57f1027b2b1e4dd75e80d4ae1416c2e3bac680ce31cb39c52dd6da327cf11f3b.deb
-	sha256sums_armv7l = 57f1027b2b1e4dd75e80d4ae1416c2e3bac680ce31cb39c52dd6da327cf11f3b
-	source_armv7h = https://packages.cloud.google.com/apt/pool/kubelet_1.19.2-00_armhf_57f1027b2b1e4dd75e80d4ae1416c2e3bac680ce31cb39c52dd6da327cf11f3b.deb
-	sha256sums_armv7h = 57f1027b2b1e4dd75e80d4ae1416c2e3bac680ce31cb39c52dd6da327cf11f3b
-	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubelet_1.19.2-00_arm64_1d6577f5414e8aa0e231f2a9720fbe960ffe2e1a78964906517f8f22eb967cbc.deb
-	sha256sums_aarch64 = 1d6577f5414e8aa0e231f2a9720fbe960ffe2e1a78964906517f8f22eb967cbc
+	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubelet_1.19.3-00_amd64_03a16e592ababd5fbd11dc5c90503f166340d0f87efd69315892151df20f0a6a.deb
+	sha256sums_x86_64 = 03a16e592ababd5fbd11dc5c90503f166340d0f87efd69315892151df20f0a6a
+	source_armv7l = https://packages.cloud.google.com/apt/pool/kubelet_1.19.3-00_armhf_242dc58c2ef62614f2538b9218eb1511ca738e51053937fa5db404df0f20534c.deb
+	sha256sums_armv7l = 242dc58c2ef62614f2538b9218eb1511ca738e51053937fa5db404df0f20534c
+	source_armv7h = https://packages.cloud.google.com/apt/pool/kubelet_1.19.3-00_armhf_242dc58c2ef62614f2538b9218eb1511ca738e51053937fa5db404df0f20534c.deb
+	sha256sums_armv7h = 242dc58c2ef62614f2538b9218eb1511ca738e51053937fa5db404df0f20534c
+	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubelet_1.19.3-00_arm64_8ec30c17ead8910bce6c947b20565c550a8f9cda71b55599b37cb463d7f31d76.deb
+	sha256sums_aarch64 = 8ec30c17ead8910bce6c947b20565c550a8f9cda71b55599b37cb463d7f31d76
 
 pkgname = kubelet-bin
 
