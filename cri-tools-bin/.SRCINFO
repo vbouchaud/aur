@@ -1,0 +1,24 @@
+pkgbase = cri-tools-bin
+	pkgdesc = Container Runtime Interface Tools Binaries that interact with the container runtime through the container runtime interface
+	pkgver = 1.19.0
+	pkgrel = 1
+	url = http://kubernetes.io
+	arch = x86_64
+	arch = armv7l
+	arch = armv7h
+	arch = aarch64
+	license = apache
+	provides = cri-tools
+	conflicts = cri-tools
+	conflicts = crictl
+	conflicts = crictl-bin
+	source_x86_64 = https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.19.0/crictl-v1.19.0-linux-amd64.tar.gz
+	sha256sums_x86_64 = 87d8ef70b61f2fe3d8b4a48f6f712fd798c6e293ed3723c1e4bbb5052098f0ae
+	source_armv7l = https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.19.0/crictl-v1.19.0-linux-arm.tar.gz
+	sha256sums_armv7l = b72fd3c4b35f60f5db2cfcd8e932f6000cf9c2978b54adfcf60ee5e2d452e92f
+	source_armv7h = https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.19.0/crictl-v1.19.0-linux-arm.tar.gz
+	sha256sums_armv7h = b72fd3c4b35f60f5db2cfcd8e932f6000cf9c2978b54adfcf60ee5e2d452e92f
+	source_aarch64 = https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.19.0/crictl-v1.19.0-linux-arm64.tar.gz
+	sha256sums_aarch64 = ec040d14ca03e8e4e504a85dae5353e04b5d9d8aea3df68699258992c0eb8d88
+
+pkgname = cri-tools-bin
