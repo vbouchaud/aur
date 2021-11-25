@@ -1,0 +1,17 @@
+pkgbase = hosts-blocklists-dnsmasq
+	pkgdesc = Timer to update daily an ad-blocking list for dnsmasq and reload it.
+	pkgver = 2.0.0
+	pkgrel = 1
+	url = https://github.com/notracking/hosts-blocklists
+	install = note.install
+	arch = any
+	license = MIT
+	depends = dnsmasq
+	source = fetch-and-merge.sh
+	source = fetch-dns-blacklist.service
+	source = fetch-dns-blacklist.timer
+	sha256sums = e5f488250d96c26fdad3b942e4dc9134b1821174a1b6b39ab36be8ddb6da5160
+	sha256sums = 0091673080d755a873136e0520c3f395d32799ee1883d175319060a14e9df415
+	sha256sums = 497c17d4d2920333215d89f8d3c40f1e805655240e2fb8f9360b41ab4482b2d4
+
+pkgname = hosts-blocklists-dnsmasq

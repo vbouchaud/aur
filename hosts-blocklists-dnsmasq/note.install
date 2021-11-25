@@ -1,0 +1,19 @@
+post_install() {
+    echo '
+To enable this timer, `systemctl enable --now fetch-dns-blacklist.timer`
+
+You can start the service once with `systemctl start fetch-dns-blacklist.service` before adding the following line to your dnsmasq.conf:
+```
+conf-file=/etc/dnsmasq.d/blacklist.conf
+```
+'
+}
+
+post_remove() {
+    echo '
+Do not forget to remove the following line from your dnsmasq.conf:
+```
+conf-file=/etc/dnsmasq.d/blacklist.conf
+```
+'
+}

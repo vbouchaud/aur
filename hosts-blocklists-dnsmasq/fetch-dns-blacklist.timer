@@ -1,0 +1,9 @@
+[Unit]
+Description=Update dnsmasq tracking blacklist daily
+
+[Timer]
+OnCalendar=*-*-* 5:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=Update dnsmasq tracking blacklist
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/dnsmasq/fetch-and-merge.sh
+ExecStartPost=/usr/bin/systemctl restart dnsmasq.service
+User=root

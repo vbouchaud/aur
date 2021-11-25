@@ -1,0 +1,29 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=hosts-blocklists-dnsmasq
+pkgdesc="Timer to update daily an ad-blocking list for dnsmasq and reload it."
+pkgver=2.0.0
+pkgrel=1
+arch=("any")
+url="https://github.com/notracking/hosts-blocklists"
+license=("MIT")
+depends=("dnsmasq")
+install="note.install"
+
+sha256sums=(
+    e5f488250d96c26fdad3b942e4dc9134b1821174a1b6b39ab36be8ddb6da5160
+    0091673080d755a873136e0520c3f395d32799ee1883d175319060a14e9df415
+    497c17d4d2920333215d89f8d3c40f1e805655240e2fb8f9360b41ab4482b2d4
+)
+
+source=(
+    fetch-and-merge.sh
+    fetch-dns-blacklist.service
+    fetch-dns-blacklist.timer
+)
+
+package() {
+    install -D -m0755 "${srcdir}/fetch-and-merge.sh" "${pkgdir}/usr/share/dnsmasq/fetch-and-merge.sh"
+    install -D -m0644 "${srcdir}/fetch-dns-blacklist.service" "${pkgdir}/usr/lib/systemd/system/fetch-dns-blacklist.service"
+    install -D -m0644 "${srcdir}/fetch-dns-blacklist.timer" "${pkgdir}/usr/lib/systemd/system/fetch-dns-blacklist.timer"
+}
