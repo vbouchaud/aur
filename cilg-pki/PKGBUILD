@@ -1,0 +1,25 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=cilg-pki
+pkgdesc="Cilg.org certs"
+pkgver=1.0.0
+pkgrel=4
+arch=("any")
+url="https://cilg.org"
+license=("MIT")
+install=cilg-pki.install
+
+sha256sums=(
+    "d1ce3e177d36c032e7e8f5a0fe06bcb75732fdda52e2f5b078d6d2d4215f024c"
+    "438e695760dadc3b24f6739caa93db662ffc882c28a444d041bfe150d3417946"
+)
+
+source=(
+    "http://pki.cilg.org/cilgRootCA.crt"
+    "http://pki.cilg.org/cilgProdCA.crt"
+)
+
+package() {
+    install -D -m0444 "${srcdir}/cilgRootCA.crt" "${pkgdir}/usr/share/ca-certificates/trust-source/anchors/cilgRootCA.crt"
+    install -D -m0444 "${srcdir}/cilgProdCA.crt" "${pkgdir}/usr/share/ca-certificates/trust-source/anchors/cilgProdCA.crt"
+}
