@@ -1,6 +1,6 @@
-# Vianney's AUR Packages
+# Vianney's Arch Packages
 
-Package sources for all the PKGBUILD I officially [maintain](https://aur.archlinux.org/packages/?SeB=m&K=vianney), [co-maintain](https://aur.archlinux.org/packages/?SeB=c&K=vianney), or unofficially host modified versions of.
+Package sources for all the PKGBUILD I [maintain](https://aur.archlinux.org/packages/?SeB=m&K=vianney), [co-maintain](https://aur.archlinux.org/packages/?SeB=c&K=vianney), or unofficially host modified versions of on my own package repository for my personnal use, some of them forked from [aur.archlinux.org](https://aur.archlinux.org) at some point.
 
 ## AVR Package Repository
 
