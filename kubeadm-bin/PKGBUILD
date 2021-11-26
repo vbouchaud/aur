@@ -3,7 +3,7 @@
 
 pkgname=kubeadm-bin
 pkgdesc="Kubernetes.io kubeadm binary"
-pkgver=1.20.0
+pkgver=1.20.1
 pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
@@ -18,16 +18,16 @@ conflicts=('kubernetes' 'kubernetes-bin' 'kubeadm')
 provides=('kubeadm')
 
 sha256sums_x86_64=(
-    '18afc5e3855cf5aaef0dbdfd1b3304f9e8e571b3c4e43b5dc97c439d62a3321a'
+    '7cd8d4021bb251862b755ed9c240091a532b89e6c796d58c3fdea7c9a72b878f'
 )
 sha256sums_armv7l=(
-    '90fe35d345d3f92756116baad6254927b0633ec7828ff50178601356156b68ff'
+    'be3580588b6059b681ffce989c227b32ec7aac8aca36d94560d6d2cbd93a0591'
 )
 sha256sums_armv7h=(
     "${sha256sums_armv7l}"
 )
 sha256sums_aarch64=(
-    'bb9d948cb471aaa68c22c3c4eaa5c1027874e3bb13ccfa399a89c826866d68df'
+    '7170deb8a42ea1259bf199f406d2d27bfbccf58c4d690c615de011c39c8b3fe9'
 )
 
 source_x86_64=(
