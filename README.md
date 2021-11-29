@@ -19,8 +19,12 @@ Then add the following repository configuration to your `pacman.conf` after the 
 Server = https://bouchaud.org/packages/$repo/$arch
 ```
 
+## Builds
+
+As previously stated, packages from this repository are added to my unoffical repository AVR. I use a script packaged as [aurbuild](https://github.com/vbouchaud/aur/tree/main/aurbuild) to ease this chore, though I should probably setup a github action to do so at some point.
+
 ## Credits
 
 Maintained using [aurpublish](https://github.com/eli-schwartz/aurpublish).
 
-Readme and workflow shamelessly copied from [alerque's](https://github.com/alerque/aur) own aur repository.
+Readme shamelessly adapted from [alerque's](https://github.com/alerque/aur) own aur repository.
