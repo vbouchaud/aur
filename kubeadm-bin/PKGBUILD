@@ -4,7 +4,7 @@
 pkgname=kubeadm-bin
 pkgdesc="Kubernetes.io kubeadm binary"
 pkgver=1.22.4
-pkgrel=1
+pkgrel=2
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
 license=('apache')
@@ -37,7 +37,7 @@ source_armv7l=(
     "https://packages.cloud.google.com/apt/pool/kubeadm_${pkgver}-00_armhf_${sha256sums_armv7l}.deb"
 )
 source_armv7h=(
-    ""
+    "${source_armv7l}"
 )
 source_aarch64=(
     "https://packages.cloud.google.com/apt/pool/kubeadm_${pkgver}-00_arm64_${sha256sums_aarch64}.deb"
