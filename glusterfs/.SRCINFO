@@ -1,8 +1,7 @@
 pkgbase = glusterfs
 	pkgdesc = a cluster file-system capable of scaling to several peta-bytes.
-	pkgver = 10.0
-	pkgrel = 3
-	epoch = 1
+	pkgver = 9.5
+	pkgrel = 1
 	url = https://www.gluster.org/
 	install = glusterfs.install
 	arch = x86_64
@@ -30,9 +29,9 @@ pkgbase = glusterfs
 	backup = etc/glusterfs/glusterd.vol
 	backup = etc/glusterfs/glusterfs-georep-logrotate
 	backup = etc/glusterfs/glusterfs-logrotate
-	source = https://download.gluster.org/pub/gluster/glusterfs/10/10.0/glusterfs-10.0.tar.gz
+	source = glusterfs-9.5.tar.gz::https://github.com/gluster/glusterfs/archive/refs/tags/v9.5.tar.gz
 	source = glusterfs.sysusers
-	sha256sums = 90bb4aa2a833a7597074405dd0197bed38b115502a09c192a115bc2383df0b8d
+	sha256sums = 7d8a8abd621da47fd725f584d2b5b7733d0f5e3bc4488d5359e37705c0770050
 	sha256sums = a470d07aedb2674adfb295b4775e490b48816b87974946da4dcf62aa0d72108a
 
 pkgname = glusterfs

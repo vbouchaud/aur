@@ -7,30 +7,54 @@
 #  - build v7 with -DUATOMIC_NO_LINK_ERROR due to liburcu
 
 pkgname=glusterfs
-epoch=1
-pkgver=10.0
-_major=${pkgver%%.*}
-pkgrel=3
 pkgdesc='a cluster file-system capable of scaling to several peta-bytes.'
+pkgver=9.5
+pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url='https://www.gluster.org/'
 license=(GPL2 LGPL3)
 install=glusterfs.install
-backup=('etc/glusterfs/glusterd.vol'
-        'etc/glusterfs/eventsconfig.json'
-        'etc/glusterfs/gluster-rsyslog-5.8.conf'
-        'etc/glusterfs/gluster-rsyslog-7.2.conf'
-        'etc/glusterfs/glusterd.vol'
-        'etc/glusterfs/glusterfs-georep-logrotate'
-        'etc/glusterfs/glusterfs-logrotate')
-depends=(fuse python libxml2 libaio liburcu attr rpcbind liburing gperftools)
-makedepends=(rpcsvc-proto)
-optdepends=('glib2: qemu-block'
-	    'python-prettytable: gluster-georep-sshkey')
-source=(https://download.gluster.org/pub/gluster/glusterfs/${_major}/$pkgver/glusterfs-$pkgver.tar.gz
-        glusterfs.sysusers)
-sha256sums=('90bb4aa2a833a7597074405dd0197bed38b115502a09c192a115bc2383df0b8d'
-            'a470d07aedb2674adfb295b4775e490b48816b87974946da4dcf62aa0d72108a')
+
+backup=(
+    'etc/glusterfs/glusterd.vol'
+    'etc/glusterfs/eventsconfig.json'
+    'etc/glusterfs/gluster-rsyslog-5.8.conf'
+    'etc/glusterfs/gluster-rsyslog-7.2.conf'
+    'etc/glusterfs/glusterd.vol'
+    'etc/glusterfs/glusterfs-georep-logrotate'
+    'etc/glusterfs/glusterfs-logrotate'
+)
+
+depends=(
+    fuse
+    python
+    libxml2
+    libaio
+    liburcu
+    attr
+    rpcbind
+    liburing
+    gperftools
+)
+
+makedepends=(
+    rpcsvc-proto
+)
+
+optdepends=(
+    'glib2: qemu-block'
+    'python-prettytable: gluster-georep-sshkey'
+)
+
+source=(
+    "${pkgname}-${pkgver}.tar.gz::https://github.com/gluster/${pkgname}/archive/refs/tags/v${pkgver}.tar.gz"
+    glusterfs.sysusers
+)
+
+sha256sums=(
+    '7d8a8abd621da47fd725f584d2b5b7733d0f5e3bc4488d5359e37705c0770050'
+    'a470d07aedb2674adfb295b4775e490b48816b87974946da4dcf62aa0d72108a'
+)
 
 prepare() {
   cd "$srcdir"/$pkgname-$pkgver
@@ -52,7 +76,7 @@ build() {
     --with-tmpfilesdir=/usr/lib/tmpfiles.d \
     --enable-gnfs \
     LEXLIB=
-  make
+  make -j4
 }
 
 package() {
