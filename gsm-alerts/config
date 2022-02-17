@@ -1,0 +1,9 @@
+endpoints=(
+)
+
+contacts=(
+)
+
+statusdir=/tmp/gsm-alerts
+
+criticalThreshold=300

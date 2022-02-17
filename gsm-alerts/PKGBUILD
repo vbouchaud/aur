@@ -1,0 +1,35 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=gsm-alerts
+pkgdesc="Timer to alert on endpoints being unreachable."
+pkgver=1.0.0
+pkgrel=1
+arch=("any")
+url="https://github.com/vbouchaud/aur/tree/main/gsm-alerts"
+license=("MIT")
+depends=(
+    bc
+)
+install="note.install"
+
+sha256sums=(
+    a9fd02ee4f6f55dfb907c1e6e68089ca77f774f757ef0f932fdffb790fe9e872
+    558e09af42dfc1f8179afc9c9e693c56d7897a7d63eeaf5e725ba9a3c6d78a63
+    4fce24e3c53568caef921ea6dc49c51a82f7312fdfd337c2cb8390564949201c
+    5b9cd1c66f0db2c95de0241fef06ed523141dee6bd5e920d062fed6b550061f9
+)
+
+source=(
+    gsm-alerts.service
+    gsm-alerts.sh
+    gsm-alerts.timer
+    config
+)
+
+package() {
+    install -D -m0755 "${srcdir}/gsm-alerts.sh" "${pkgdir}/usr/share/gsm-alerts/gsm-alerts.sh"
+    install -D -m0644 "${srcdir}/gsm-alerts.service" "${pkgdir}/usr/lib/systemd/system/gsm-alerts.service"
+    install -D -m0644 "${srcdir}/gsm-alerts.timer" "${pkgdir}/usr/lib/systemd/system/gsm-alerts.timer"
+    install -D -m0644 "${srcdir}/config" "${pkgdir}/etc/gsm-alerts/config"
+
+}

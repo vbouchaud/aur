@@ -1,0 +1,5 @@
+post_install() {
+    echo '
+To enable this timer, `systemctl enable --now gsm-alerts.timer`
+'
+}
