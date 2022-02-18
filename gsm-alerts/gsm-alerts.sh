@@ -8,11 +8,13 @@ else
     echo "configuration file not found:"
     echo "$ cat $config
 endpoints=(
-  example.com
+  example.com::group1,group3
+  test.example.com::group2
 )
 
 contacts=(
- \"+33123456789\"
+ \"+33123456789::group1,group2\"
+ \"+33123456789::group2\"
 )
 
 statusdir=/tmp/gsm-alerts
@@ -23,19 +25,26 @@ criticalThreshold=300
 fi
 
 function alert {
-    message="${1}"
+    groups=($(echo "${1}" | tr "," "\n"))
+    message="${2}"
 
-    for contact in ${contacts[@]}; do
-        sendsms -n "${contact}" -m "ALERT: ${message}"
-
-        # retry once on failure
-        if [ $? -ne 0 ]; then
-            sendsms -n "${contact}" -m "ALERT: ${message}"
-        fi
+    for group in ${groups[@]}; do
+        for entry in ${contacts[@]}; do
+            number="${entry%::*}"
+            cgroups=($(echo "${entry#*::}" | tr "," "\n"))
+            for cgroup in ${cgroups[@]}; do
+                if [ "${cgroup}" == "${group}" ]; then
+                    sendsms -n "${number}" -m "ALERT: $message"
+                    break
+                fi
+            done
+        done
     done
 }
 
-for endpoint in ${endpoints[@]}; do
+for entry in ${endpoints[@]}; do
+    endpoint=${entry%::*}
+
     ping -c 1 -W 5 $endpoint
     if [ $? -ne 0 ]; then
         mkdir -p "${statusdir}/${endpoint}/"
@@ -44,17 +53,17 @@ for endpoint in ${endpoints[@]}; do
             date -u +%s > "${statusdir}/${endpoint}/last"
         fi
 
-        elapsedTimeSinceDown=$(echo "$(date -u +%s) - $(cat ${statusdir}/${endpoint}/last)" | bc)
+        elapsedTimeSinceDown=$(($(date -u +%s) - $(cat ${statusdir}/${endpoint}/last)))
         if [ $elapsedTimeSinceDown -ge $criticalThreshold ] && [ ! -f "${statusdir}/${endpoint}/sent" ]; then
             # first time greater than threshold
-            alert "${endpoint} has been DOWN since $(date -d @$(cat "${statusdir}/${endpoint}/last"))."
+            alert "${entry#*::}" "${endpoint} has been DOWN since $(date -d @$(cat "${statusdir}/${endpoint}/last"))."
             touch "${statusdir}/${endpoint}/sent"
         fi
     else
         if [ -f "${statusdir}/${endpoint}/sent" ]; then
             # redemption
-            elapsedTimeSinceDown=$(echo "$(date +%s) - $(cat ${statusdir}/${endpoint}/last)" | bc)
-            alert "${endpoint} is now UP. It was down for ${elapsedTimeSinceDown} seconds, since $(date -d @$(cat "${statusdir}/${endpoint}/last"))."
+            elapsedTimeSinceDown=$(($(date -u +%s) - $(cat ${statusdir}/${endpoint}/last)))
+            alert "${entry#*::}" "${endpoint} is now UP. It was down for ${elapsedTimeSinceDown} seconds, since $(date -d @$(cat "${statusdir}/${endpoint}/last"))."
         fi
         rm -rf "${statusdir}/${endpoint}/"
     fi
