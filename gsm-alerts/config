@@ -1,9 +1,23 @@
+# Endpoints, fqdn must be unique
 endpoints=(
+    # fqdn:[name]:[threshold]:[probe]:labels
 )
 
 contacts=(
+    # number:labels
 )
 
-statusdir=/tmp/gsm-alerts
+# Status directory
+# statusdir=/tmp/gsm-alerts
 
-criticalThreshold=300
+# Probe executable/script directory
+# probedir=/etc/gsm-alerts/probes
+
+# Default time to wait before alerting, in seconds
+# defaultThreshold=300
+
+# Default probe for hosts that do
+# defaultProbe=lan-ping
+
+# Development mode: will log when alerting instead of actually alerting
+# devel=0
