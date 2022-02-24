@@ -116,7 +116,7 @@ for entry in ${endpoints[@]}; do
         if [ -f "${statusdir}/${endpoint}/sent" ]; then
             # redemption
             elapsedTimeSinceDown=$(($(date -u +%s) - $(cat ${statusdir}/${endpoint}/last)))
-            alert "${labels}" "${name} is now UP. It was down for ${elapsedTimeSinceDown} seconds, since $(date -d @$(cat "${statusdir}/${endpoint}/last"))."
+            alert "${labels}" "${name} is now UP. It was down for $(($elapsedTimeSinceDown / 3600)) hours, $(($elapsedTimeSinceDown % 3600 / 60)) minutes and $(($elapsedTimeSinceDown % 60)) seconds, since $(date -d @$(cat "${statusdir}/${endpoint}/last"))."
         fi
         rm -rf "${statusdir}/${endpoint}/"
     fi
