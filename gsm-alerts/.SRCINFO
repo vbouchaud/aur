@@ -1,7 +1,7 @@
 pkgbase = gsm-alerts
 	pkgdesc = Timer to alert on endpoints being unreachable.
-	pkgver = 3.1.0
-	pkgrel = 1
+	pkgver = 3.2.0
+	pkgrel = 2
 	url = https://github.com/vbouchaud/aur/tree/main/gsm-alerts
 	install = note.install
 	arch = any
@@ -13,11 +13,13 @@ pkgbase = gsm-alerts
 	source = config
 	source = lan-ping.probe.sh
 	source = wan-ping.probe.sh
+	source = wan-http.probe.sh
 	sha256sums = a9fd02ee4f6f55dfb907c1e6e68089ca77f774f757ef0f932fdffb790fe9e872
-	sha256sums = 3d6bc5b82418a6a5f7adae544900296c9ad423986a13de3d2748d795193733a6
+	sha256sums = 488fed7f11bba786320ad249df205874fecc0fe683238ae9e0e70eb64ae50405
 	sha256sums = 4fce24e3c53568caef921ea6dc49c51a82f7312fdfd337c2cb8390564949201c
 	sha256sums = a8f92cc01496a7997507afbe09ac7cfc42f19491e8053359883329aa74c09c7a
 	sha256sums = 1bc68897a6a9dc908d0694596740888fce95b4771bb409c59afcb9acd7140987
 	sha256sums = 88fc47ceca8f53d8880f343f23bd3dd591c7812209020e612c5d74b8fca13f43
+	sha256sums = 37c154476ac500573e8e3b3d233ed02358bc6fd07ef804aa51146cdab0010eaf
 
 pkgname = gsm-alerts

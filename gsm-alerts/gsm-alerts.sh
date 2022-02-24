@@ -24,7 +24,11 @@ function getContactLabels {
 }
 
 function getEndpointFQDN {
-    echo $1 | cut -d':' -f1
+    echo $1 | cut -d':' -f1 | cut -d',' -f1
+}
+
+function getEndpointParameters {
+    echo $1 | cut -d':' -f1 | cut -d',' -f2-
 }
 
 function getEndpointName {
@@ -87,13 +91,14 @@ function alert {
 
 for entry in ${endpoints[@]}; do
     endpoint=$(getEndpointFQDN "${entry}")
+    parameters=$(getEndpointParameters "${entry}")
     name=$(getEndpointName "${entry}")
     threshold=$(getEndpointThreshold "${entry}")
     labels=$(getEndpointLabels "${entry}")
     probe=$(getEndpointProbe "${entry}")
 
     if [ -f "${probedir}/${probe}.sh" ]; then
-        "${probedir}/${probe}.sh" "${endpoint}"
+        "${probedir}/${probe}.sh" "${endpoint}" "${parameters}"
         ret=$?
     else
         ret=1
