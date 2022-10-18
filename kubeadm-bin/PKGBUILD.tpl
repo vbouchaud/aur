@@ -6,7 +6,7 @@ pkgdesc="Kubernetes.io kubeadm binary"
 pkgver=$KUBEADM_VERSION
 pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
-url="http://kubernetes.io"
+url="https://kubernetes.io"
 license=('apache')
 depends=(
     'kubelet'
