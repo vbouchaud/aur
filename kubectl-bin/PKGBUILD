@@ -2,7 +2,7 @@
 
 pkgname=kubectl-bin
 pkgdesc="Kubernetes.io client binary"
-pkgver=1.24.3
+pkgver=1.24.4
 pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="http://kubernetes.io"
@@ -11,16 +11,16 @@ conflicts=('kubectl')
 provides=('kubectl')
 
 sha256sums_x86_64=(
-    '6f7bbea92489662220ce641e7b41dda803dc78d3be658186e3d169d4d593bc55'
+    '236d770fe432a325eacea145bfa688d17271e56f39f9bda953b4afb967f16823'
 )
 sha256sums_armv7l=(
-    'b9d93ed1954237c97ee3ff43762935b387330dbed6d330d2b5f8f855c36a6070'
+    '301fb9ab17e17c5b772621b638ed3300ce7c842bf0b9974555dd8de9b1e726eb'
 )
 sha256sums_armv7h=(
     "${sha256sums_armv7l}"
 )
 sha256sums_aarch64=(
-    'f678f085be2e4edb4654479022a29d7e989e2554e87416ed711757fefb792bdf'
+    '8f168b4bed6d00aabb8773c55d4fb953f89ef46e2785c8a824fdb9ac522ac639'
 )
 
 source_x86_64=(
