@@ -1,6 +1,6 @@
 pkgbase = kubeadm-bin
 	pkgdesc = Kubernetes.io kubeadm binary
-	pkgver = 1.27.0
+	pkgver = 1.27.1
 	pkgrel = 1
 	url = https://kubernetes.io
 	arch = x86_64
@@ -15,13 +15,13 @@ pkgbase = kubeadm-bin
 	conflicts = kubernetes
 	conflicts = kubernetes-bin
 	conflicts = kubeadm
-	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.0-00_amd64_7596037ca8a9fb8c996998d92dacf17b42c0ccacdb0f751c76c8ac76f829a44b.deb
-	sha256sums_x86_64 = 7596037ca8a9fb8c996998d92dacf17b42c0ccacdb0f751c76c8ac76f829a44b
-	source_armv7l = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.0-00_armhf_.deb
+	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.1-00_amd64_f18413bf4855208e88cec0d5ac6d4dca03242658bba61a293efbc9eb2b3c5ae6.deb
+	sha256sums_x86_64 = f18413bf4855208e88cec0d5ac6d4dca03242658bba61a293efbc9eb2b3c5ae6
+	source_armv7l = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.1-00_armhf_.deb
 	sha256sums_armv7l = 
-	source_armv7h = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.0-00_armhf_.deb
+	source_armv7h = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.1-00_armhf_.deb
 	sha256sums_armv7h = 
-	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.0-00_arm64_4999d7153c783376766bc0e38a530fc0b6438b4591a39d264ca2e982f17ac281.deb
-	sha256sums_aarch64 = 4999d7153c783376766bc0e38a530fc0b6438b4591a39d264ca2e982f17ac281
+	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubeadm_1.27.1-00_arm64_c454354f26d032a4769552db521dcaa02ffa30fbcb67c9db844996190cc17872.deb
+	sha256sums_aarch64 = c454354f26d032a4769552db521dcaa02ffa30fbcb67c9db844996190cc17872
 
 pkgname = kubeadm-bin
