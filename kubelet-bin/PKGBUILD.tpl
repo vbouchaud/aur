@@ -5,7 +5,7 @@ pkgname=kubelet-bin
 pkgdesc="Kubernetes.io kubelet binary"
 pkgver=$KUBELET_VERSION
 pkgrel=1
-arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
+arch=('x86_64' 'aarch64')
 url="https://kubernetes.io"
 license=('apache')
 depends=(
@@ -32,12 +32,6 @@ provides=('kubelet')
 
 sha256sums_x86_64=(
     '$KUBELET_AMD64'
-)
-sha256sums_armv7l=(
-    '$KUBELET_ARMHF'
-)
-sha256sums_armv7h=(
-    "${sha256sums_armv7l}"
 )
 sha256sums_aarch64=(
     '$KUBELET_ARM64'

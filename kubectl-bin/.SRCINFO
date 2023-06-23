@@ -1,22 +1,16 @@
 pkgbase = kubectl-bin
 	pkgdesc = Kubernetes.io client binary
-	pkgver = 1.27.1
+	pkgver = 1.27.2
 	pkgrel = 1
 	url = https://kubernetes.io
 	arch = x86_64
-	arch = armv7l
-	arch = armv7h
 	arch = aarch64
 	license = apache
 	provides = kubectl
 	conflicts = kubectl
-	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubectl_1.27.1-00_amd64_1552e953c1c88f1e41c806923093057a5145069354d429a6e3d7225b430b669a.deb
-	sha256sums_x86_64 = 1552e953c1c88f1e41c806923093057a5145069354d429a6e3d7225b430b669a
-	source_armv7l = https://packages.cloud.google.com/apt/pool/kubectl_1.27.1-00_armhf_.deb
-	sha256sums_armv7l = 
-	source_armv7h = https://packages.cloud.google.com/apt/pool/kubectl_1.27.1-00_armhf_.deb
-	sha256sums_armv7h = 
-	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubectl_1.27.1-00_arm64_da295384894b4748ccdb37fc506c2f0f88c522ae3e10990a9f5c5c4ef9586a63.deb
-	sha256sums_aarch64 = da295384894b4748ccdb37fc506c2f0f88c522ae3e10990a9f5c5c4ef9586a63
+	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubectl_1.27.2-00_amd64_72f89ffba3874dd65847f60c211623eb7849278c57b1b1b248e2edbb5969c350.deb
+	sha256sums_x86_64 = 72f89ffba3874dd65847f60c211623eb7849278c57b1b1b248e2edbb5969c350
+	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubectl_1.27.2-00_arm64_054dcc7ae4a2e089f80ad94b5d9ff0d03ccc330e52da05bd16801481d4173fd7.deb
+	sha256sums_aarch64 = 054dcc7ae4a2e089f80ad94b5d9ff0d03ccc330e52da05bd16801481d4173fd7
 
 pkgname = kubectl-bin
