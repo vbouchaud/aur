@@ -3,3 +3,4 @@
 */*.tar.zst
 */*.tar.zst.sig
 */.forcerelease
+*/LICENSE

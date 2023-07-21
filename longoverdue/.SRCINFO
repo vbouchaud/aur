@@ -1,7 +1,7 @@
 pkgbase = longoverdue
 	pkgdesc = System service update management made easy
 	pkgver = 0.5.4
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/9ary/longoverdue
 	arch = any
 	license = MIT

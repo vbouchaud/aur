@@ -1,13 +1,15 @@
 pkgbase = cilg-pki
 	pkgdesc = Cilg.org certs
 	pkgver = 1.0.0
-	pkgrel = 4
+	pkgrel = 5
 	url = https://cilg.org
 	install = cilg-pki.install
 	arch = any
 	license = MIT
+	source = LICENSE::https://bouchaud.org/misc/MIT.txt
 	source = http://pki.cilg.org/cilgRootCA.crt
 	source = http://pki.cilg.org/cilgProdCA.crt
+	sha256sums = 35e3cbe726e28f2f624acbe4fce8af09715e55537df7aa22ac89f00cde399515
 	sha256sums = d1ce3e177d36c032e7e8f5a0fe06bcb75732fdda52e2f5b078d6d2d4215f024c
 	sha256sums = 438e695760dadc3b24f6739caa93db662ffc882c28a444d041bfe150d3417946
 

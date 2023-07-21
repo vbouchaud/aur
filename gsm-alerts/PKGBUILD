@@ -3,7 +3,7 @@
 pkgname=gsm-alerts
 pkgdesc="Timer to alert on endpoints being unreachable."
 pkgver=3.2.1
-pkgrel=1
+pkgrel=2
 arch=("any")
 url="https://github.com/vbouchaud/aur/tree/main/gsm-alerts"
 license=("MIT")
@@ -13,6 +13,7 @@ backup=(
 )
 
 sha256sums=(
+    35e3cbe726e28f2f624acbe4fce8af09715e55537df7aa22ac89f00cde399515
     a9fd02ee4f6f55dfb907c1e6e68089ca77f774f757ef0f932fdffb790fe9e872
     1445cb6689f7a02449ed3d7c557b200a7dec2029c6a8148f10da556e782c67d6
     4fce24e3c53568caef921ea6dc49c51a82f7312fdfd337c2cb8390564949201c
@@ -23,6 +24,7 @@ sha256sums=(
 )
 
 source=(
+    LICENSE::https://bouchaud.org/misc/MIT.txt
     gsm-alerts.service
     gsm-alerts.sh
     gsm-alerts.timer
@@ -34,17 +36,20 @@ source=(
 
 package() {
     # install script
-    install -D -m0755 "${srcdir}/gsm-alerts.sh" "${pkgdir}/usr/share/gsm-alerts/gsm-alerts.sh"
+    install -D -m0755 "$srcdir/gsm-alerts.sh" "$pkgdir/usr/share/gsm-alerts/gsm-alerts.sh"
 
     # install systemd timer and services
-    install -D -m0644 "${srcdir}/gsm-alerts.service" "${pkgdir}/usr/lib/systemd/system/gsm-alerts.service"
-    install -D -m0644 "${srcdir}/gsm-alerts.timer" "${pkgdir}/usr/lib/systemd/system/gsm-alerts.timer"
+    install -D -m0644 "$srcdir/gsm-alerts.service" "$pkgdir/usr/lib/systemd/system/gsm-alerts.service"
+    install -D -m0644 "$srcdir/gsm-alerts.timer" "$pkgdir/usr/lib/systemd/system/gsm-alerts.timer"
 
     # install config template
-    install -D -m0644 "${srcdir}/config" "${pkgdir}/etc/gsm-alerts/config"
+    install -D -m0644 "$srcdir/config" "$pkgdir/etc/gsm-alerts/config"
 
     # install default probes
-    install -D -m0755 "${srcdir}/lan-ping.probe.sh" "${pkgdir}/etc/gsm-alerts/probes/lan-ping.sh"
-    install -D -m0755 "${srcdir}/wan-ping.probe.sh" "${pkgdir}/etc/gsm-alerts/probes/wan-ping.sh"
-    install -D -m0755 "${srcdir}/wan-http.probe.sh" "${pkgdir}/etc/gsm-alerts/probes/wan-http.sh"
+    install -D -m0755 "$srcdir/lan-ping.probe.sh" "$pkgdir/etc/gsm-alerts/probes/lan-ping.sh"
+    install -D -m0755 "$srcdir/wan-ping.probe.sh" "$pkgdir/etc/gsm-alerts/probes/wan-ping.sh"
+    install -D -m0755 "$srcdir/wan-http.probe.sh" "$pkgdir/etc/gsm-alerts/probes/wan-http.sh"
+
+    install -D -m0644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
 }
