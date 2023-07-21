@@ -1,0 +1,7 @@
+[Unit]
+Description=Status reporting service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/status-report/status-report.sh
+User=root

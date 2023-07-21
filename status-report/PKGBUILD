@@ -1,0 +1,43 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=status-report
+pkgdesc="Reports status via ssh to a given host for alerting purposes."
+pkgver=1.0.0
+pkgrel=6
+arch=("any")
+url="https://github.com/vbouchaud/aur/tree/main/status-report"
+license=("MIT")
+install="note.install"
+backup=(
+    etc/status-report/config
+)
+
+sha256sums=(
+    35e3cbe726e28f2f624acbe4fce8af09715e55537df7aa22ac89f00cde399515
+    224d592c8a46c2f51ab35edffe19a0a38e40bfcaabd3d0c150314651e4b48ae1
+    5e91bb97ad1b3f4b73618afff778f267df7c2b489a293b66dbd0ef9c43a976ed
+    4d6e244f0bae21e79bf4378fe2cc80a667e15af21dd6f847f0050e5eb2541427
+    2aa439751de754fd81d9ab5c39e35c005338b4791a1d1c6b8683826c1602c085
+)
+
+source=(
+    LICENSE::https://bouchaud.org/misc/MIT.txt
+    status-report.service
+    status-report.timer
+    status-report.sh
+    config
+)
+
+package() {
+    # install script
+    install -D -m0755 "${srcdir}/status-report.sh" "${pkgdir}/usr/share/status-report/status-report.sh"
+
+    # install systemd timer and services
+    install -D -m0644 "${srcdir}/status-report.service" "${pkgdir}/usr/lib/systemd/system/status-report.service"
+    install -D -m0644 "${srcdir}/status-report.timer" "${pkgdir}/usr/lib/systemd/system/status-report.timer"
+
+    # install config template
+    install -D -m0644 "${srcdir}/config" "${pkgdir}/etc/status-report/config"
+
+    install -D -m0644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

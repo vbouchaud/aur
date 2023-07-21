@@ -1,0 +1,9 @@
+[Unit]
+Description=Status reporting timer
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
