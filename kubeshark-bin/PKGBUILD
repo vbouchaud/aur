@@ -1,8 +1,9 @@
-# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+# Maintainer: Olivier Le Moal <mail at olivierlemoal dot fr>
+# Contributor: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
 
 pkgname=kubeshark-bin
 pkgdesc="Kubeshark is an API Traffic Analyzer for Kubernetes."
-pkgver=41.1
+pkgver=41.3
 pkgrel=2
 arch=('x86_64' 'aarch64')
 url="https://github.com/kubeshark/kubeshark"
@@ -11,10 +12,10 @@ conflicts=('kubeshark')
 provides=('kubeshark')
 
 sha256sums_x86_64=(
-    648f883d9e0a576a8303ff42b2a7c048de2ad2984226d1eb587ba63125b7b3e3
+    9f93bdd3779c8c809e5614f859c3f7e3c122101322f503b45551762905796526
 )
 sha256sums_aarch64=(
-    b8ff29b51e673f0df696579465c394f1bc5512c18a977777df334fa0076a28b1
+    e1547b68071603b6f308f2dd5098624e2283a4054d474841b77cf2d9cbff03ef
 )
 
 source_x86_64=(
