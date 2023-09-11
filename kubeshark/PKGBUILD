@@ -2,7 +2,7 @@
 
 pkgname=kubeshark
 pkgdesc="Kubeshark is an API Traffic Analyzer for Kubernetes."
-pkgver=41.6
+pkgver=50.2
 pkgrel=1
 arch=('x86_64' 'aarch64')
 url="https://github.com/kubeshark/kubeshark"
@@ -16,7 +16,7 @@ source=(
 )
 
 sha256sums=(
-    "73319e46c004ff0d305ea426c642cfdf7030ac4bc88ad7f6bb009e3ab24db7f2"
+    "2664a578d4b650ac81e586e083614fbdc5285ba63e2a3e73b95f2cb6756ef46c"
 )
 
 build() {
