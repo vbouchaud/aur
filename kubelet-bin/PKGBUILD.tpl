@@ -40,12 +40,6 @@ sha256sums_aarch64=(
 source_x86_64=(
     "https://packages.cloud.google.com/apt/pool/kubelet_${pkgver}-00_amd64_${sha256sums_x86_64}.deb"
 )
-source_armv7l=(
-    "https://packages.cloud.google.com/apt/pool/kubelet_${pkgver}-00_armhf_${sha256sums_armv7l}.deb"
-)
-source_armv7h=(
-    "${source_armv7l}"
-)
 source_aarch64=(
     "https://packages.cloud.google.com/apt/pool/kubelet_${pkgver}-00_arm64_${sha256sums_aarch64}.deb"
 )
