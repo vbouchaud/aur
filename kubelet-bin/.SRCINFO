@@ -1,7 +1,7 @@
 pkgbase = kubelet-bin
 	pkgdesc = Kubernetes.io kubelet binary
-	pkgver = 1.27.4
-	pkgrel = 2
+	pkgver = 1.28.2
+	pkgrel = 1
 	url = https://kubernetes.io
 	arch = x86_64
 	arch = aarch64
@@ -25,9 +25,9 @@ pkgbase = kubelet-bin
 	conflicts = kubernetes
 	conflicts = kubernetes-bin
 	conflicts = kubelet
-	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubelet_1.27.4-00_amd64_84346623c9ee9f12322ce44488d2ca2359c903040d29544c58b1368a5da94df1.deb
-	sha256sums_x86_64 = 84346623c9ee9f12322ce44488d2ca2359c903040d29544c58b1368a5da94df1
-	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubelet_1.27.4-00_arm64_9a3a8175fbb0cfb2badd2fb59bc55ade2e7ade6fdd30116e7b06a6f795011ccf.deb
-	sha256sums_aarch64 = 9a3a8175fbb0cfb2badd2fb59bc55ade2e7ade6fdd30116e7b06a6f795011ccf
+	source_x86_64 = https://packages.cloud.google.com/apt/pool/kubelet_1.28.2-00_amd64_5b77328aba85db9c8a1fb682375815923682a6b78f66ed49dcfdf09d33923a77.deb
+	sha256sums_x86_64 = 5b77328aba85db9c8a1fb682375815923682a6b78f66ed49dcfdf09d33923a77
+	source_aarch64 = https://packages.cloud.google.com/apt/pool/kubelet_1.28.2-00_arm64_98f656b0188fb0bf55e667ab45c9858926eae7af3f48139a62a2a1c18374b78a.deb
+	sha256sums_aarch64 = 98f656b0188fb0bf55e667ab45c9858926eae7af3f48139a62a2a1c18374b78a
 
 pkgname = kubelet-bin
