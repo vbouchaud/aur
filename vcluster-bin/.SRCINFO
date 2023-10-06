@@ -1,0 +1,13 @@
+pkgbase = vcluster-bin
+	pkgdesc = Create fully functional virtual Kubernetes clusters
+	pkgver = 0.15.0
+	pkgrel = 0
+	url = https://vcluster.com
+	arch = x86_64
+	license = Apache
+	provides = vcluster
+	conflicts = vcluster
+	source = vcluster-0.15.0::https://github.com/loft-sh/vcluster/releases/download/v0.15.0/vcluster-linux-amd64
+	sha256sums = e80ff494d705324b9a9f8a8998402a687f47fe219e0a6d0a50e06a851591bbdf
+
+pkgname = vcluster-bin
