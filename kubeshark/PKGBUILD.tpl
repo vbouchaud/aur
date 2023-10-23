@@ -16,7 +16,7 @@ _latest() {
 }
 
 source=(
-    "${pkgname}-${pkgver}.tar.gz::https://github.com/kubeshark/kubeshark/archive/${pkgver}.tar.gz"
+    "${pkgname}-${pkgver}.tar.gz::https://github.com/kubeshark/kubeshark/archive/v${pkgver}.tar.gz"
 )
 
 build() {
@@ -43,7 +43,7 @@ build() {
         -X 'github.com/kubeshark/kubeshark/misc.GitCommitHash=' \
         -X 'github.com/kubeshark/kubeshark/misc.Branch=' \
         -X 'github.com/kubeshark/kubeshark/misc.Platform=${platform}' \
-        -X 'github.com/kubeshark/kubeshark/misc.Ver=${pkgver}' \
+        -X 'github.com/kubeshark/kubeshark/misc.Ver=v${pkgver}' \
         -s -w" \
       -o bin/kubeshark kubeshark.go
 }
