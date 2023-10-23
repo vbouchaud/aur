@@ -2,7 +2,7 @@
 
 pkgname=kubeshark
 pkgdesc="Kubeshark is an API Traffic Analyzer for Kubernetes."
-pkgver=50.4
+pkgver=51.0.0
 pkgrel=1
 arch=('x86_64' 'aarch64')
 url="https://github.com/kubeshark/kubeshark"
@@ -16,7 +16,7 @@ _latest() {
 }
 
 source=(
-    "${pkgname}-${pkgver}.tar.gz::https://github.com/kubeshark/kubeshark/archive/${pkgver}.tar.gz"
+    "${pkgname}-${pkgver}.tar.gz::https://github.com/kubeshark/kubeshark/archive/v${pkgver}.tar.gz"
 )
 
 build() {
@@ -43,7 +43,7 @@ build() {
         -X 'github.com/kubeshark/kubeshark/misc.GitCommitHash=' \
         -X 'github.com/kubeshark/kubeshark/misc.Branch=' \
         -X 'github.com/kubeshark/kubeshark/misc.Platform=${platform}' \
-        -X 'github.com/kubeshark/kubeshark/misc.Ver=${pkgver}' \
+        -X 'github.com/kubeshark/kubeshark/misc.Ver=v${pkgver}' \
         -s -w" \
       -o bin/kubeshark kubeshark.go
 }
@@ -56,5 +56,5 @@ package() {
 }
 
 sha256sums=(
-    334a28382a800f0d2f6c934f04b6f0e826cbe3f96a52e052f2cef877a5319e15
+    bf6dc6c8c3540494066313b2569de9c0daa390ce65090d66300751ddd4698ff4
 )
