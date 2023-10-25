@@ -1,13 +1,13 @@
 pkgbase = kubeshark
 	pkgdesc = Kubeshark is an API Traffic Analyzer for Kubernetes.
-	pkgver = 51.0.0
+	pkgver = 51.0.14
 	pkgrel = 1
 	url = https://github.com/kubeshark/kubeshark
 	arch = x86_64
 	arch = aarch64
 	license = apache
 	makedepends = go
-	source = kubeshark-51.0.0.tar.gz::https://github.com/kubeshark/kubeshark/archive/v51.0.0.tar.gz
-	sha256sums = bf6dc6c8c3540494066313b2569de9c0daa390ce65090d66300751ddd4698ff4
+	source = kubeshark-51.0.14.tar.gz::https://github.com/kubeshark/kubeshark/archive/v51.0.14.tar.gz
+	sha256sums = c2682221cedf547eb173e8379631d7c300ac2951ca90402734ed079a3761e697
 
 pkgname = kubeshark
