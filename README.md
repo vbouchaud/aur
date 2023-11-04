@@ -1,6 +1,6 @@
 # Vianney's Arch Packages
 
-Package sources for all the PKGBUILD I [maintain](https://aur.archlinux.org/packages/?SeB=m&K=vianney), [co-maintain](https://aur.archlinux.org/packages/?SeB=c&K=vianney), or unofficially host modified versions of on my own package repository for my personnal use, some of them forked from [aur.archlinux.org](https://aur.archlinux.org) at some point.
+Package sources for all the PKGBUILD I [maintain](https://aur.archlinux.org/packages/?SeB=m&K=vianney), [co-maintain](https://aur.archlinux.org/packages/?SeB=c&K=vianney), or unofficially host modified versions of on my own package repository for my personal use, some of them forked from [aur.archlinux.org](https://aur.archlinux.org) at some point.
 
 ## AVR Package Repository
 
@@ -20,7 +20,7 @@ Server = https://bouchaud.org/packages/$repo/$arch
 
 ## Builds
 
-As previously stated, packages from this repository are added to my unoffical repository AVR. I use a script packaged as [aurbuild](https://github.com/vbouchaud/aur/tree/main/aurbuild) to ease this chore, though I should probably setup a github action to do so at some point.
+As previously stated, packages from this repository (most of them) are added to my unoffical repository AVR. I use a script packaged as [aurbuild](https://github.com/vbouchaud/aur/tree/main/aurbuild) to ease this chore, though I should probably setup a github action to do so at some point.
 
 ## Credits
 
