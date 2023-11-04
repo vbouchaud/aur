@@ -1,0 +1,41 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=swayed
+pkgver=1
+pkgrel=1
+pkgdesc="Dependency management for my own sway configuration."
+url="https://bouchaud.org"
+arch=('any')
+license=('GPL')
+depends=(
+    # sway related projects
+    sway swaylock swayidle swaybg
+    # deendency for sway
+    python-i3ipc
+
+    # notification service
+    mako
+
+    # default app
+    ## terminal
+    foot
+    ## browser
+    firefox
+    ## menu
+    dmenu
+    ## editor
+    doomed
+
+    # screen sharing for browsers
+    pipewire
+    xdg-desktop-portal-wlr
+
+    # screen brightness
+    brightnessctl
+
+    # player controler
+    playerctl
+
+    # pulseaudio controler
+    libpulse # pactl
+)

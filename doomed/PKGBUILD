@@ -1,0 +1,40 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=doomed
+pkgver=1
+pkgrel=1
+pkgdesc="Dependency management for my own doom-emacs configuration."
+url="https://bouchaud.org"
+arch=('any')
+license=('GPL')
+depends=(
+    # emacs doom dependencies
+    emacs-nativecomp ripgrep
+
+    # :lang go support
+    gomodifytags gore gotests gopls
+
+    # :lang python support
+    python-isort python-pipenv python-nose python-pytest
+
+    # :lang javascript support
+    typescript-language-server
+
+    # :lang cc (c / c++) support
+    ccls
+
+    # markdown linting
+    markdownlint
+
+    # :lang markdown support
+    marked
+
+    # :lang java support
+    jdk17-openjdk # javac specific jdk version
+
+    # shell linting
+    shellcheck
+)
+optdepends=(
+    'nerd-fonts: pretty icons and stuff'
+)

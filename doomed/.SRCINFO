@@ -1,0 +1,26 @@
+pkgbase = doomed
+	pkgdesc = Dependency management for my own doom-emacs configuration.
+	pkgver = 1
+	pkgrel = 1
+	url = https://bouchaud.org
+	arch = any
+	license = GPL
+	depends = emacs-nativecomp
+	depends = ripgrep
+	depends = gomodifytags
+	depends = gore
+	depends = gotests
+	depends = gopls
+	depends = python-isort
+	depends = python-pipenv
+	depends = python-nose
+	depends = python-pytest
+	depends = typescript-language-server
+	depends = ccls
+	depends = markdownlint
+	depends = marked
+	depends = jdk17-openjdk
+	depends = shellcheck
+	optdepends = nerd-fonts: pretty icons and stuff
+
+pkgname = doomed

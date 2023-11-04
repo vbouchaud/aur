@@ -1,0 +1,24 @@
+pkgbase = swayed
+	pkgdesc = Dependency management for my own sway configuration.
+	pkgver = 1
+	pkgrel = 1
+	url = https://bouchaud.org
+	arch = any
+	license = GPL
+	depends = sway
+	depends = swaylock
+	depends = swayidle
+	depends = swaybg
+	depends = python-i3ipc
+	depends = mako
+	depends = foot
+	depends = firefox
+	depends = dmenu
+	depends = doomed
+	depends = pipewire
+	depends = xdg-desktop-portal-wlr
+	depends = brightnessctl
+	depends = playerctl
+	depends = libpulse
+
+pkgname = swayed
