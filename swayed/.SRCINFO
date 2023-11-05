@@ -14,7 +14,6 @@ pkgbase = swayed
 	depends = foot
 	depends = firefox
 	depends = dmenu
-	depends = doomed
 	depends = pipewire
 	depends = xdg-desktop-portal-wlr
 	depends = brightnessctl

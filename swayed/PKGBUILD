@@ -23,8 +23,8 @@ depends=(
     firefox
     ## menu
     dmenu
-    ## editor
-    doomed
+    # ## editor
+    # doomed
 
     # screen sharing for browsers
     pipewire
