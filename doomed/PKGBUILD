@@ -2,7 +2,7 @@
 
 pkgname=doomed
 pkgver=1
-pkgrel=1
+pkgrel=3
 pkgdesc="Dependency management for my own doom-emacs configuration."
 url="https://bouchaud.org"
 arch=('any')
@@ -21,20 +21,26 @@ depends=(
     typescript-language-server
 
     # :lang cc (c / c++) support
-    ccls
+    ccls glslang
 
     # markdown linting
-    markdownlint
+    markdownlint go-tools
 
     # :lang markdown support
     marked
+
+    # :lang rust support
+    rust rust-analyzer
 
     # :lang java support
     jdk17-openjdk # javac specific jdk version
 
     # shell linting
     shellcheck
-)
-optdepends=(
-    'nerd-fonts: pretty icons and stuff'
+
+    # fast search
+    fd
+
+    # icon font
+    ttf-nerd-fonts-symbols-mono
 )

@@ -1,0 +1,36 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=ttyed
+pkgver=1
+pkgrel=4
+pkgdesc="Dependency management for my tty environment."
+url="https://bouchaud.org"
+arch=('any')
+license=('GPL')
+depends=(
+    ## default shell
+    zsh
+
+    # scm
+    git
+
+    # terminal multiplexer
+    tmux
+
+    # editor, again, in case I install this package in a non graphical environment
+    doomed
+
+    # basic monitoring tools
+    htop iftop
+
+    # updates
+    longoverdue
+
+    # various tools I use a lot
+    jq yq bat bind pass rsync openssh most gnupg
+)
+optdepends=(
+    'oh-my-zsh-git: community-driven framework for managing your zsh configuration' # no actual release, only a main branch
+    'aurpublish: help with aur publishing tasks'
+    'aurbuild: quasi automated package building'
+)

@@ -2,7 +2,7 @@
 
 pkgname=swayed
 pkgver=1
-pkgrel=1
+pkgrel=6
 pkgdesc="Dependency management for my own sway configuration."
 url="https://bouchaud.org"
 arch=('any')
@@ -10,8 +10,14 @@ license=('GPL')
 depends=(
     # sway related projects
     sway swaylock swayidle swaybg
-    # deendency for sway
+    # missing deendency for sway scripts
     python-i3ipc
+
+    # like sway, but more awesome
+    swaysome
+
+    # screen capture
+    grim slurp
 
     # notification service
     mako
@@ -21,13 +27,14 @@ depends=(
     foot
     ## browser
     firefox
+    ## mail
+    thunderbird
     ## menu
     dmenu
-    # ## editor
-    # doomed
+    ## editor
+    doomed
 
     # screen sharing for browsers
-    pipewire
     xdg-desktop-portal-wlr
 
     # screen brightness
@@ -36,6 +43,6 @@ depends=(
     # player controler
     playerctl
 
-    # pulseaudio controler
-    libpulse # pactl
+    # meh
+    xorg-xwayland
 )

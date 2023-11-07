@@ -1,0 +1,19 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=overworked
+pkgver=1
+pkgrel=1
+pkgdesc="Dependency management for my work."
+url="https://bouchaud.org"
+arch=('any')
+license=('GPL')
+depends=(
+    vault
+    openldap
+    kubectl
+    k8s-ldap-auth
+)
+optdepends=(
+    'snx: ssl tunnel for checkpoint appliances'
+    'apachedirectorystudio: gui for browsing ldap'
+)

@@ -1,0 +1,49 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
+pkgname=own
+pkgver=1
+pkgrel=3
+pkgdesc="Dependency management for my own environment."
+url="https://bouchaud.org"
+arch=('any')
+license=('GPL')
+install="note.install"
+depends=(
+    # bootloader
+    grub
+
+    # network management
+    netctl dhcpcd wpa_supplicant dialog
+
+    # get packages from aur
+    yay
+
+    # login manager
+    ly
+
+    # window manager
+    swayed # this is a meta package that I made, providing a minimal working sway environment
+
+    # terminal environment
+    ttyed
+
+    # actual work applications I use daily
+    overworked
+
+    # keyring, secrets and passwords
+    gnome-keyring seahorse keepassxc pass
+
+    # actual working audio!
+    pipewire pipewire-audio pipewire-pulse wireplumber sof-firmware pavucontrol
+
+    # to set adwaita-dark and icons
+    gnome-themes-extra
+
+    # social
+    element-desktop telegram-desktop
+)
+optdepends=(
+    'numix-icon-theme-git: icons corresponding to the gtk configuration in vbouchaud/dotfiles'
+    'teams-for-linux: self explanatory (for work)'
+    'openlens-bin: gui to access kubernetes clusters'
+)

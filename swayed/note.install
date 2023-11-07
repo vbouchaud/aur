@@ -1,0 +1,3 @@
+# following units should be enabled:
+systemctl --user enable --now foot-server.socket
+systemctl --user enable --now mako-watcher.path
