@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [ ! -f ~/.avr ]; then
+if [ ! -f ~/.config/avr/config ]; then
     echo "configuration file not found:"
-    echo "$ cat ~/.avr
+    echo "$ cat ~/.config/avr
 [build]
     repositoryName=avr
     repositoryLocation=/foo/avr/x86_64
@@ -11,7 +11,7 @@ if [ ! -f ~/.avr ]; then
 fi
 
 function getconfig {
-    git config -f ~/.avr --get "$1"
+    git config -f ~/.config/avr/config --get "$1"
 }
 
 location="$(pwd)"
