@@ -2,18 +2,29 @@
 
 pkgname=overworked
 pkgver=1
-pkgrel=1
+pkgrel=3
 pkgdesc="Dependency management for my work."
 url="https://bouchaud.org"
 arch=('any')
 license=('GPL')
 depends=(
     vault
+
     openldap
-    kubectl
-    k8s-ldap-auth
+
+    # kubernetes related
+    kubectl k8s-ldap-auth helm
+
+    # virtualization with qemu/kvm
+    virt-manager qemu-full dnsmasq qemu-user-static
+
+    # docker related stuff
+    docker docker-buildx
 )
 optdepends=(
+    'teams-for-linux: self explanatory (for work)'
     'snx: ssl tunnel for checkpoint appliances'
     'apachedirectorystudio: gui for browsing ldap'
+    'docker-credential-secretservice: docker credentials in keystore'
+    'openlens-bin: gui to access kubernetes clusters'
 )

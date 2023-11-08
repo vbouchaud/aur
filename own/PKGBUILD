@@ -2,7 +2,7 @@
 
 pkgname=own
 pkgver=1
-pkgrel=3
+pkgrel=5
 pkgdesc="Dependency management for my own environment."
 url="https://bouchaud.org"
 arch=('any')
@@ -27,9 +27,6 @@ depends=(
     # terminal environment
     ttyed
 
-    # actual work applications I use daily
-    overworked
-
     # keyring, secrets and passwords
     gnome-keyring seahorse keepassxc pass
 
@@ -44,6 +41,5 @@ depends=(
 )
 optdepends=(
     'numix-icon-theme-git: icons corresponding to the gtk configuration in vbouchaud/dotfiles'
-    'teams-for-linux: self explanatory (for work)'
-    'openlens-bin: gui to access kubernetes clusters'
+    'overworked: actual work applications I use daily'
 )
