@@ -2,7 +2,7 @@
 
 pkgname=doomed
 pkgver=1
-pkgrel=4
+pkgrel=6
 pkgdesc="Dependency management for my own doom-emacs configuration."
 url="https://bouchaud.org"
 arch=('any')
@@ -10,9 +10,6 @@ license=('GPL')
 depends=(
     # emacs doom dependencies
     emacs-nativecomp ripgrep
-
-    # :lang go support
-    gomodifytags gore gotests gopls
 
     # :lang python support
     python-isort python-pipenv python-nose python-pytest
@@ -35,9 +32,6 @@ depends=(
     # :lang java support
     jdk17-openjdk # javac specific jdk version
 
-    # shell linting
-    shellcheck
-
     # fast search
     fd
 
@@ -48,4 +42,5 @@ optdepends=(
     'gomodifytags: part of :lang (go +lsp)'
     'gore: part of :lang (go +lsp)'
     'gotests: part of :lang (go +lsp)'
+    'shellcheck: shell linting'
 )

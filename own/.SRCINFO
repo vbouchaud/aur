@@ -1,7 +1,7 @@
 pkgbase = own
 	pkgdesc = Dependency management for my own environment.
 	pkgver = 1
-	pkgrel = 5
+	pkgrel = 6
 	url = https://bouchaud.org
 	install = note.install
 	arch = any
@@ -11,7 +11,6 @@ pkgbase = own
 	depends = dhcpcd
 	depends = wpa_supplicant
 	depends = dialog
-	depends = yay
 	depends = ly
 	depends = swayed
 	depends = ttyed
@@ -30,5 +29,6 @@ pkgbase = own
 	depends = telegram-desktop
 	optdepends = numix-icon-theme-git: icons corresponding to the gtk configuration in vbouchaud/dotfiles
 	optdepends = overworked: actual work applications I use daily
+	optdepends = yay: get packages from aur
 
 pkgname = own

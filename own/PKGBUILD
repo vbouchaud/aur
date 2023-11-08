@@ -2,7 +2,7 @@
 
 pkgname=own
 pkgver=1
-pkgrel=5
+pkgrel=6
 pkgdesc="Dependency management for my own environment."
 url="https://bouchaud.org"
 arch=('any')
@@ -14,9 +14,6 @@ depends=(
 
     # network management
     netctl dhcpcd wpa_supplicant dialog
-
-    # get packages from aur
-    yay
 
     # login manager
     ly
@@ -42,4 +39,5 @@ depends=(
 optdepends=(
     'numix-icon-theme-git: icons corresponding to the gtk configuration in vbouchaud/dotfiles'
     'overworked: actual work applications I use daily'
+    'yay: get packages from aur'
 )
