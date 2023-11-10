@@ -1,7 +1,7 @@
 pkgbase = swayed
 	pkgdesc = Dependency management for my own sway configuration.
 	pkgver = 1
-	pkgrel = 9
+	pkgrel = 10
 	url = https://github.com/vbouchaud/dotfiles/tree/main/sway
 	arch = any
 	license = GPL
@@ -24,5 +24,6 @@ pkgbase = swayed
 	depends = playerctl
 	depends = xorg-xwayland
 	depends = gammastep
+	depends = wl-clipboard
 
 pkgname = swayed

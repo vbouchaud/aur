@@ -2,7 +2,7 @@
 
 pkgname=swayed
 pkgver=1
-pkgrel=9
+pkgrel=10
 pkgdesc="Dependency management for my own sway configuration."
 url="https://github.com/vbouchaud/dotfiles/tree/main/sway"
 arch=('any')
@@ -48,4 +48,7 @@ depends=(
 
     # redshift for wayland
     gammastep
+
+    # grimshot screenshot copy
+    wl-clipboard
 )
