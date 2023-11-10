@@ -2,7 +2,7 @@
 
 pkgname=swayed
 pkgver=1
-pkgrel=8
+pkgrel=9
 pkgdesc="Dependency management for my own sway configuration."
 url="https://github.com/vbouchaud/dotfiles/tree/main/sway"
 arch=('any')

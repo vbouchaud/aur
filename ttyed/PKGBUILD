@@ -2,7 +2,7 @@
 
 pkgname=ttyed
 pkgver=1
-pkgrel=6
+pkgrel=7
 pkgdesc="Dependency management for my tty environment."
 url="https://bouchaud.org"
 arch=('any')

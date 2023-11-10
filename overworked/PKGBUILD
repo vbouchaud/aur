@@ -2,7 +2,7 @@
 
 pkgname=overworked
 pkgver=1
-pkgrel=3
+pkgrel=4
 pkgdesc="Dependency management for my work."
 url="https://bouchaud.org"
 arch=('any')

@@ -1,7 +1,7 @@
 pkgbase = swayed
 	pkgdesc = Dependency management for my own sway configuration.
 	pkgver = 1
-	pkgrel = 8
+	pkgrel = 9
 	url = https://github.com/vbouchaud/dotfiles/tree/main/sway
 	arch = any
 	license = GPL
