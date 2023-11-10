@@ -2,7 +2,7 @@
 
 pkgname=ttyed
 pkgver=1
-pkgrel=5
+pkgrel=6
 pkgdesc="Dependency management for my tty environment."
 url="https://bouchaud.org"
 arch=('any')
@@ -31,6 +31,9 @@ depends=(
 )
 optdepends=(
     'oh-my-zsh-git: community-driven framework for managing your zsh configuration' # no actual release, only a main branch
+
     'aurpublish: help with aur publishing tasks'
     'aurbuild: quasi automated package building'
+
+    'keyring-cli: query secret service from command line (consistent API accross oses)'
 )

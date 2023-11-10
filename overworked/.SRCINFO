@@ -10,6 +10,8 @@ pkgbase = overworked
 	depends = kubectl
 	depends = k8s-ldap-auth
 	depends = helm
+	depends = terraform
+	depends = ansible
 	depends = virt-manager
 	depends = qemu-full
 	depends = dnsmasq
@@ -21,5 +23,6 @@ pkgbase = overworked
 	optdepends = apachedirectorystudio: gui for browsing ldap
 	optdepends = docker-credential-secretservice: docker credentials in keystore
 	optdepends = openlens-bin: gui to access kubernetes clusters
+	optdepends = vmware-workstation: vmware virtualization and esxi access
 
 pkgname = overworked

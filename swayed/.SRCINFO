@@ -1,8 +1,8 @@
 pkgbase = swayed
 	pkgdesc = Dependency management for my own sway configuration.
 	pkgver = 1
-	pkgrel = 7
-	url = https://bouchaud.org
+	pkgrel = 8
+	url = https://github.com/vbouchaud/dotfiles/tree/main/sway
 	arch = any
 	license = GPL
 	depends = sway
@@ -23,5 +23,6 @@ pkgbase = swayed
 	depends = brightnessctl
 	depends = playerctl
 	depends = xorg-xwayland
+	depends = gammastep
 
 pkgname = swayed

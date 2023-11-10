@@ -2,7 +2,7 @@
 
 pkgname=own
 pkgver=1
-pkgrel=6
+pkgrel=10
 pkgdesc="Dependency management for my own environment."
 url="https://bouchaud.org"
 arch=('any')
@@ -11,6 +11,8 @@ install="note.install"
 depends=(
     # bootloader
     grub
+
+    lvm2
 
     # network management
     netctl dhcpcd wpa_supplicant dialog
@@ -33,11 +35,29 @@ depends=(
     # to set adwaita-dark and icons
     gnome-themes-extra
 
-    # social
-    element-desktop telegram-desktop
+    # media player
+    vlc
+
+    # syncronization service
+    syncthing
+
+    # yay printing!
+    cups cups-pdf
+
+    # connect things
+    tailscale
 )
 optdepends=(
-    'numix-icon-theme-git: icons corresponding to the gtk configuration in vbouchaud/dotfiles'
     'overworked: actual work applications I use daily'
+
+    'numix-icon-theme-git: icons corresponding to the gtk configuration in vbouchaud/dotfiles'
+
     'yay: get packages from aur'
+
+    # social
+    'element-desktop: matrix client'
+    'telegram-desktop: telegram client'
+
+    'subdl: download subs'
+    'transmission-remote-gtk: remote client for transmission'
 )

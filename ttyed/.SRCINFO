@@ -1,7 +1,7 @@
 pkgbase = ttyed
 	pkgdesc = Dependency management for my tty environment.
 	pkgver = 1
-	pkgrel = 5
+	pkgrel = 6
 	url = https://bouchaud.org
 	arch = any
 	license = GPL
@@ -26,5 +26,6 @@ pkgbase = ttyed
 	optdepends = oh-my-zsh-git: community-driven framework for managing your zsh configuration
 	optdepends = aurpublish: help with aur publishing tasks
 	optdepends = aurbuild: quasi automated package building
+	optdepends = keyring-cli: query secret service from command line (consistent API accross oses)
 
 pkgname = ttyed

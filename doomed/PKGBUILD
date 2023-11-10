@@ -2,9 +2,9 @@
 
 pkgname=doomed
 pkgver=1
-pkgrel=6
+pkgrel=8
 pkgdesc="Dependency management for my own doom-emacs configuration."
-url="https://bouchaud.org"
+url="https://github.com/vbouchaud/dotfiles/tree/main/doom"
 arch=('any')
 license=('GPL')
 depends=(
@@ -26,11 +26,23 @@ depends=(
     # :lang markdown support
     marked
 
+    # :lang go support
+    gopls
+
     # :lang rust support
     rust rust-analyzer
 
     # :lang java support
     jdk17-openjdk # javac specific jdk version
+
+    # :tool ansible
+    ansible
+
+    # :tool terraform
+    terraform
+
+    # :tool editorconfig
+    editorconfig-core-c
 
     # fast search
     fd

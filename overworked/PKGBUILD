@@ -15,6 +15,9 @@ depends=(
     # kubernetes related
     kubectl k8s-ldap-auth helm
 
+    # iac
+    terraform ansible
+
     # virtualization with qemu/kvm
     virt-manager qemu-full dnsmasq qemu-user-static
 
@@ -27,4 +30,5 @@ optdepends=(
     'apachedirectorystudio: gui for browsing ldap'
     'docker-credential-secretservice: docker credentials in keystore'
     'openlens-bin: gui to access kubernetes clusters'
+    'vmware-workstation: vmware virtualization and esxi access'
 )
