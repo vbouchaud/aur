@@ -1,7 +1,7 @@
 pkgbase = swayed
 	pkgdesc = Dependency management for my own sway configuration.
 	pkgver = 1
-	pkgrel = 10
+	pkgrel = 11
 	url = https://github.com/vbouchaud/dotfiles/tree/main/sway
 	arch = any
 	license = GPL
@@ -17,7 +17,7 @@ pkgbase = swayed
 	depends = foot
 	depends = firefox
 	depends = thunderbird
-	depends = dmenu
+	depends = wofi
 	depends = doomed
 	depends = xdg-desktop-portal-wlr
 	depends = brightnessctl
