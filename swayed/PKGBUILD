@@ -2,7 +2,7 @@
 
 pkgname=swayed
 pkgver=1
-pkgrel=11
+pkgrel=12
 pkgdesc="Dependency management for my own sway configuration."
 url="https://github.com/vbouchaud/dotfiles/tree/main/sway"
 arch=('any')
@@ -52,3 +52,21 @@ depends=(
     # grimshot screenshot copy
     wl-clipboard
 )
+
+source=(
+    file://sway-service
+    file://sway-service.desktop
+    file://sway.service
+)
+
+sha256sums=(
+    SKIP
+    SKIP
+    SKIP
+)
+
+package() {
+    install -Dm0755 sway-service "${pkgdir}/usr/bin/"
+    install -Dm0644 sway-service.desktop "${pkgdir}/usr/share/wayland-sessions/"
+    install -Dm0644 sway.service "${pkgdir}/usr/lib/systemd/user/"
+}

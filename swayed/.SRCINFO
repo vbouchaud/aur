@@ -1,7 +1,7 @@
 pkgbase = swayed
 	pkgdesc = Dependency management for my own sway configuration.
 	pkgver = 1
-	pkgrel = 11
+	pkgrel = 12
 	url = https://github.com/vbouchaud/dotfiles/tree/main/sway
 	arch = any
 	license = GPL
@@ -25,5 +25,11 @@ pkgbase = swayed
 	depends = xorg-xwayland
 	depends = gammastep
 	depends = wl-clipboard
+	source = file://sway-service
+	source = file://sway-service.desktop
+	source = file://sway.service
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
 
 pkgname = swayed
