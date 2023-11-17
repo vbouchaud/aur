@@ -66,7 +66,7 @@ sha256sums=(
 )
 
 package() {
-    install -Dm0755 sway-service "${pkgdir}/usr/bin/"
-    install -Dm0644 sway-service.desktop "${pkgdir}/usr/share/wayland-sessions/"
-    install -Dm0644 sway.service "${pkgdir}/usr/lib/systemd/user/"
+    install -Dm0755 sway-service "${pkgdir}/usr/bin/sway-service"
+    install -Dm0644 sway-service.desktop "${pkgdir}/usr/share/wayland-sessions/sway-service.desktop"
+    install -Dm0644 sway.service "${pkgdir}/usr/lib/systemd/user/sway.service"
 }
