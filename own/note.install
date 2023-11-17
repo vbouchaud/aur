@@ -1,6 +1,9 @@
 post_install() {
 cat - <<EOF
-# the following service should be enabled:
-systemctl enable ly.service
+# Edit the default_session.command entry in /etc/greetd/config.toml to look like
+command = "tuigreet --issue --remember --remember-user-session --cmd /bin/sh"
+
+# The following service should then be enabled:
+systemctl enable greetd.service
 EOF
 }

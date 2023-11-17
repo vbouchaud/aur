@@ -2,23 +2,24 @@
 
 pkgname=own
 pkgver=1
-pkgrel=10
+pkgrel=11
 pkgdesc="Dependency management for my own environment."
 url="https://bouchaud.org"
 arch=('any')
 license=('GPL')
 install="note.install"
 depends=(
-    # bootloader
-    grub
+    # system related
+    grub lvm2 linux linux-headers linux-firmware
 
-    lvm2
+    # bluetooth
+    bluez bluez-utils
 
     # network management
     netctl dhcpcd wpa_supplicant dialog
 
     # login manager
-    ly
+    greetd greetd-tuigreet
 
     # window manager
     swayed # this is a meta package that I made, providing a minimal working sway environment
