@@ -8,7 +8,10 @@ pkgname=(
 pkgver=1.28.0
 pkgrel=1
 pkgdesc="CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
-arch=(x86_64)
+arch=(
+  x86_64
+  aarch64
+)
 url="https://github.com/kubernetes-sigs/cri-tools"
 license=(Apache)
 groups=(kubernetes-tools)
