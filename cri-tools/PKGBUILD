@@ -6,7 +6,7 @@ pkgname=(
   critest
 )
 pkgver=1.28.0
-pkgrel=1
+pkgrel=2
 pkgdesc="CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
 arch=(
   x86_64
@@ -20,6 +20,13 @@ makedepends=(go)
 source=(https://github.com/kubernetes-sigs/cri-tools/archive/v$pkgver/$pkgbase-v$pkgver.tar.gz)
 sha512sums=('222d3785dc7e8485538b4745766494be02d359347eb1337c9dd04839e19269d768922ff04f07d1fb72291c3554ecf91b382307253a288c9376079135a625cc0c')
 b2sums=('f1092059318e8ded7e429aaa0b8597ab4519ab219167d13dc68b4d6e4022361ea1dd72a98cac67b09952b7f49ac51e7a31553a537d9c1d629015c642e98e5dd1')
+
+  case "$CARCH" in
+	  aarch64) _pkgarch="arm64"
+		         ;;
+	  x86_64) _pkgarch="amd64"
+		        ;;
+  esac
 
 build() {
   local common_ldflags=(
@@ -38,15 +45,15 @@ build() {
   make VERSION=$pkgver GO_LDFLAGS="${common_ldflags[*]}" -C $pkgbase-$pkgver
 
   mkdir -vp completions
-  $pkgbase-$pkgver/build/bin/linux/amd64/crictl completion bash > completions/crictl
-  $pkgbase-$pkgver/build/bin/linux/amd64/crictl completion zsh > completions/_crictl
-  $pkgbase-$pkgver/build/bin/linux/amd64/crictl completion fish > completions/crictl.fish
+  $pkgbase-$pkgver/build/bin/linux/$_pkgarch/crictl completion bash > completions/crictl
+  $pkgbase-$pkgver/build/bin/linux/$_pkgarch/crictl completion zsh > completions/_crictl
+  $pkgbase-$pkgver/build/bin/linux/$_pkgarch/crictl completion fish > completions/crictl.fish
 }
 
 package_crictl() {
   pkgdesc="A CLI for CRI-compatible container runtimes"
 
-  install -vDm 755 $pkgbase-$pkgver/build/bin/linux/amd64/$pkgname -t "$pkgdir/usr/bin/"
+  install -vDm 755 $pkgbase-$pkgver/build/bin/linux/$_pkgarch/$pkgname -t "$pkgdir/usr/bin/"
   # shell completion
   install -vDm 644 completions/$pkgname -t "$pkgdir/usr/share/bash-completion/completions/"
   install -vDm 644 completions/_$pkgname -t "$pkgdir/usr/share/zsh/site-functions/"
@@ -60,7 +67,7 @@ package_crictl() {
 package_critest() {
   pkgdesc="A benchmarking CLI for CRI-compatible container runtimes"
 
-  install -vDm 755 $pkgbase-$pkgver/build/bin/linux/amd64/$pkgname -t "$pkgdir/usr/bin/"
+  install -vDm 755 $pkgbase-$pkgver/build/bin/linux/$_pkgarch/$pkgname -t "$pkgdir/usr/bin/"
   # docs
   install -vDm 644 $pkgbase-$pkgver/docs/{benchmark,validation}.md -t "$pkgdir/usr/share/doc/$pkgname/"
   install -vDm 644 $pkgbase-$pkgver/{{CHANGELOG,CONTRIBUTING,README,code-of-conduct}.md,SECURITY_CONTACTS} -t "$pkgdir/usr/share/doc/$pkgname/"

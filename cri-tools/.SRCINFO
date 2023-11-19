@@ -1,7 +1,7 @@
 pkgbase = cri-tools
 	pkgdesc = CLI and validation tools for Kubelet Container Runtime Interface (CRI)
 	pkgver = 1.28.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/kubernetes-sigs/cri-tools
 	arch = x86_64
 	arch = aarch64
