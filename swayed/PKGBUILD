@@ -9,9 +9,7 @@ arch=('any')
 license=('GPL')
 depends=(
     # sway related projects
-    sway swaylock swayidle swaybg
-    # missing deendency for sway scripts
-    python-i3ipc
+    sway swaylock swayidle swaybg sway-contrib
 
     # like sway, but more awesome
     swaysome
