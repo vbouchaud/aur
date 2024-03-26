@@ -1,0 +1,100 @@
+# Maintainer: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+# https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.29.md#server-binaries
+
+pkgbase=kubernetes-bin
+
+pkgname=(
+    kubeadm-bin
+    kubelet-bin
+)
+
+pkgdesc='Kubernetes.io server binary'
+pkgver=1.29.3
+pkgrel=1
+arch=('x86_64' 'aarch64')
+url='https://kubernetes.io'
+license=('apache')
+conflicts=(
+    'kubernetes'
+)
+provides=(
+    'kubernetes'
+)
+
+source_x86_64=(
+    "kubernetes-${pkgver}.tgz::https://dl.k8s.io/v${pkgver}/kubernetes-node-linux-amd64.tar.gz"
+)
+source_aarch64=(
+    "kubernetes-${pkgver}.tgz::https://dl.k8s.io/v${pkgver}/kubernetes-node-linux-arm64.tar.gz"
+)
+
+sha512sums_x86_64=(
+    '704a3039a9b203dee4f74b219162d8295dd85e16ed385fb8106a14e75f768623adf2da3083991625709ac403bd5785ea683f1451dbb58637b8b53be85627b12f'
+)
+sha512sums_aarch64=(
+    '794fcc502fe98b0196e06db1cd66f0700fe650d7ef423b85b4ecd60bf0397ab754ec3aebab79eb1b8dd42dc068a8522a9cc0a851bea977bd04801451ea653a25'
+)
+
+package_kubeadm-bin() {
+    pkgdesc='Kubernetes.io kubeadm binary'
+    conflicts+=(
+        kubeadm
+    )
+    provides+=(
+        kubeadm
+    )
+    depends=(
+        kubelet
+    )
+
+    install -D -m0755 "kubernetes/server/bin/kubeadm" "${pkgdir}/usr/bin/kubeadm"
+    "${pkgdir}/usr/bin/kubeadm" completion bash | install -D -m644 /dev/stdin "${pkgdir}/usr/share/bash-completion/completions/kubeadm"
+    "${pkgdir}/usr/bin/kubeadm" completion zsh | install -D -m644 /dev/stdin "${pkgdir}/usr/share/zsh/site-functions/_kubeadm"
+
+    cat <<EOF | install -D -m644 /dev/stdin "${pkgdir}/etc/systemd/system/kubelet.service.d/10-kubeadm.conf"
+cat etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+# Note: This dropin only works with kubeadm and kubelet v1.11+
+[Service]
+Environment="KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf"
+Environment="KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"
+# This is a file that "kubeadm init" and "kubeadm join" generates at runtime, populating the KUBELET_KUBEADM_ARGS variable dynamically
+EnvironmentFile=-/var/lib/kubelet/kubeadm-flags.env
+# This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user should use
+# the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be sourced from this file.
+EnvironmentFile=-/etc/default/kubelet
+ExecStart=
+ExecStart=/usr/bin/kubelet \$KUBELET_KUBECONFIG_ARGS \$KUBELET_CONFIG_ARGS \$KUBELET_KUBEADM_ARGS \$KUBELET_EXTRA_ARGS
+EOF
+}
+
+package_kubelet-bin() {
+    pkgdesc='Kubernetes.io kubelet binary'
+    conflicts+=(
+        'kubelet'
+    )
+    provides+=(
+        'kubelet'
+    )
+    depends=(
+        crictl
+    )
+
+    install -D -m0755 "kubernetes/server/bin/kubelet" "${pkgdir}/usr/bin/kubelet"
+
+    cat <<EOF | install -D -m644 /dev/stdin "${pkgdir}/usr/lib/systemd/system/kubelet.service"
+[Unit]
+Description=kubelet: The Kubernetes Node Agent
+Documentation=https://kubernetes.io/docs/home/
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/kubelet
+Restart=always
+StartLimitInterval=0
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+EOF
+}

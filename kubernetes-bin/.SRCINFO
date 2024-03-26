@@ -1,0 +1,30 @@
+pkgbase = kubernetes-bin
+	pkgdesc = Kubernetes.io server binary
+	pkgver = 1.29.3
+	pkgrel = 1
+	url = https://kubernetes.io
+	arch = x86_64
+	arch = aarch64
+	license = apache
+	provides = kubernetes
+	conflicts = kubernetes
+	source_x86_64 = kubernetes-1.29.3.tgz::https://dl.k8s.io/v1.29.3/kubernetes-node-linux-amd64.tar.gz
+	sha512sums_x86_64 = 704a3039a9b203dee4f74b219162d8295dd85e16ed385fb8106a14e75f768623adf2da3083991625709ac403bd5785ea683f1451dbb58637b8b53be85627b12f
+	source_aarch64 = kubernetes-1.29.3.tgz::https://dl.k8s.io/v1.29.3/kubernetes-node-linux-arm64.tar.gz
+	sha512sums_aarch64 = 794fcc502fe98b0196e06db1cd66f0700fe650d7ef423b85b4ecd60bf0397ab754ec3aebab79eb1b8dd42dc068a8522a9cc0a851bea977bd04801451ea653a25
+
+pkgname = kubeadm-bin
+	pkgdesc = Kubernetes.io kubeadm binary
+	depends = kubelet
+	provides = kubernetes
+	provides = kubeadm
+	conflicts = kubernetes
+	conflicts = kubeadm
+
+pkgname = kubelet-bin
+	pkgdesc = Kubernetes.io kubelet binary
+	depends = crictl
+	provides = kubernetes
+	provides = kubelet
+	conflicts = kubernetes
+	conflicts = kubelet
