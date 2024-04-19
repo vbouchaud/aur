@@ -9,7 +9,7 @@ pkgname=(
 )
 
 pkgdesc='Kubernetes.io server binary'
-pkgver=1.29.4
+pkgver=1.30.0
 pkgrel=1
 arch=('x86_64' 'aarch64')
 url='https://kubernetes.io'
@@ -27,10 +27,10 @@ source_aarch64=(
 )
 
 sha512sums_x86_64=(
-    'bf5eb2f4ef8e215941d98ca62bc4901fcad7f68dda153e1f077f9688b1e3f273d3b25bc48167cefd0a1f1ce1e0a3525d71bf7aa37b7fa8b8f639af35df0233bd'
+    'e3e8f443a5397029a26a30852f47a9406dc17622638a7b03d37b384283880503af85d134d2a5dfdcfd7a0a5cb11eef8312b37dec77c90062e29d7e0ea1da6026'
 )
 sha512sums_aarch64=(
-    'd983706b1975d3b8c3cb1dae833efc178337df2c2abdd835588a0be6dbaef55c27e1df993e8623b87f56f7f7a8f6de34390e8a085911644fa8af2d49f47512e0'
+    'd1299f54a2ec4343eb23be36071e3560f339d535b4c2eeb60c09cf40b3357f4371ca198aa4af0c41bde73bef1221a839c846a9f9b497f47f2fdf553238a7dab9'
 )
 
 package_kubeadm-bin() {
