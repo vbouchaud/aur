@@ -1,0 +1,4 @@
+grafana-alloy-bin-*.zip
+grafana-alloy-bin-*.pkg.tar.zst
+pkg/
+src/
