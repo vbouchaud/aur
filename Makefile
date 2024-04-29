@@ -12,7 +12,7 @@ CC_END=\033[0m
 # Get the version information
 current_pkgname=$(shell cat PKGBUILD | awk -F = '/^pkgname/ { print $$2 }')
 use_pkgname=$(current_pkgname)
-current_binaryname=$(shell cat PKGBUILD | awk -F = '/^binaryname/ { print $$2 }')
+current_binaryname=$(shell cat PKGBUILD | awk -F = '/^_binaryname/ { print $$2 }')
 use_binaryname=$(current_binaryname)
 current_pkgver=$(shell cat PKGBUILD | awk -F = '/^pkgver/ { print $$2 }')
 use_pkgver=$(current_pkgver)
@@ -25,14 +25,11 @@ endif
 ifneq ($(strip $(pkgver)),)
 	use_pkgver=$(pkgver)
 endif
-ifdef ($(strip $(pkgrel)),)
+ifneq ($(strip $(pkgrel)),)
 	use_pkgrel=$(pkgrel)
-else
-  ifeq ($(pkgver),$(current_pkgver))
-	  use_pkgrel=$(shell echo "$(current_pkgrel)+1" | bc)
-	else
-	  use_pkgrel=1
-	endif
+endif
+ifneq ($(strip $(binaryname)),)
+	use_binaryname=$(binaryname)
 endif
 
 .PHONY: help

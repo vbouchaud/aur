@@ -1,7 +1,7 @@
 pkgbase = grafana-alloy-bin
-	pkgdesc = Grafana Alloy is a vendor-neutral distribution of the OpenTelemetry (OTel) Collector.
+	pkgdesc = A vendor-neutral distribution of the OpenTelemetry (OTel) Collector.
 	pkgver = v1.0.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/grafana/alloy
 	arch = x86_64
 	license = Apache-2.0
