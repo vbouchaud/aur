@@ -1,17 +1,17 @@
 pkgbase = bruno
 	pkgdesc = Opensource API Client for Exploring and Testing APIs
-	pkgver = 1.20.1
+	pkgver = 1.22.0
 	pkgrel = 1
 	url = https://www.usebruno.com/
 	arch = x86_64
 	license = MIT
 	makedepends = nvm
 	makedepends = asar
-	depends = electron21
+	depends = electron31
 	depends = alsa-lib
-	source = bruno-1.20.1.tar.gz::https://github.com/usebruno/bruno/archive/v1.20.1.tar.gz
+	source = bruno-1.22.0.tar.gz::https://github.com/usebruno/bruno/archive/v1.22.0.tar.gz
 	source = com.usebruno.app.Bruno.desktop
-	sha256sums = 6162e25ba4ea68308bc3d393690b935a0387276e3eb71d1f73726898f7ad763a
+	sha256sums = 711fc44580e26c99fd60597539630adba2aaac943a46a6db968ea30c966c9437
 	sha256sums = 7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051
 
 pkgname = bruno

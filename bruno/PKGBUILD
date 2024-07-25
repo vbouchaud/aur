@@ -2,12 +2,12 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=1.20.1
+pkgver=1.22.0
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
 license=('MIT')
-_electron=electron21
+_electron=electron31
 depends=(
     "${_electron}"
     'alsa-lib'
@@ -23,7 +23,7 @@ source=(
 )
 
 sha256sums=(
-    '6162e25ba4ea68308bc3d393690b935a0387276e3eb71d1f73726898f7ad763a'
+    '711fc44580e26c99fd60597539630adba2aaac943a46a6db968ea30c966c9437'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
 )
 
