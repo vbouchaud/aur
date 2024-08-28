@@ -2,7 +2,7 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=1.24.0
+pkgver=1.26.2
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -23,7 +23,7 @@ source=(
 )
 
 sha256sums=(
-    '07bac4451157cd299ad4ea52de94ad120b427d30672d4ddf8f45ea70ed802fe3'
+    '562d6e73444b034945223f2ea2cf9a720daa9486c94ac2702a710aded17aecfa'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
 )
 
@@ -44,8 +44,8 @@ prepare() {
 
     nvm install
 
-    # disabling husky however I can since I'm not in a git repository
-    sed -i -e 's/"husky":.*//g' -e 's/"husky install"/"true"/g' package.json
+    # https://typicode.github.io/husky/how-to.html#ci-server-and-docker
+    export HUSKY=0
 
     npm install --cache "${srcdir}/npm-cache"
 }
@@ -57,9 +57,10 @@ build() {
 
     cd "${pkgname}-${pkgver}"
 
+    npm run build:graphql-docs
     npm run build:bruno-query
     npm run build:bruno-common
-    npm run build:graphql-docs
+    npm run sandbox:bundle-libraries --workspace=packages/bruno-js
     npm run build:web
 
     electronDist="/usr/lib/${_electron}"
