@@ -2,7 +2,7 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=1.30.1
+pkgver=1.32.0
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -23,7 +23,7 @@ source=(
 )
 
 sha256sums=(
-    '3f84d09207fce5997593b1d6c99503bd778f93bcc4f74d0801987dbad90e3c09'
+    '0ccd5389d23d214fd5d80c3a28eeaab9061acc0e9bd981f758bd3d8c9f2761fd'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
 )
 
