@@ -3,7 +3,7 @@
 pkgname=bruno-bin
 _pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=1.33.0
+pkgver=1.34.2
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -19,10 +19,10 @@ depends=(
     'alsa-lib'
 )
 
-# _latest function is used in a script that will auto update this PKGBUILD.
-_latest() {
-    curl -s https://api.github.com/repos/usebruno/bruno/releases | jq -r '.[0].tag_name'
-}
+sha256sums=(
+    "5c60ed0ebf726bbfba2b573b4810d596dd93b04d77de6d6dcc84e98f70610b3d"
+    "8891070a847e5047bf77d38d88d7dfbab1beab41e37c802b9f5b23f2bbb9c7be"
+)
 
 source=(
     "https://github.com/usebruno/bruno/releases/download/v${pkgver}/bruno_${pkgver}_amd64_linux.deb"
@@ -39,8 +39,3 @@ package() {
 
     install -D -m0644 "$srcdir/LICENSE-$pkgver" "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
 }
-
-sha256sums=(
-    29dade261963122fc82915ad3e33f203144c695a3045a1886492ca54459dceca
-    8891070a847e5047bf77d38d88d7dfbab1beab41e37c802b9f5b23f2bbb9c7be
-)
