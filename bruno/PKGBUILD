@@ -2,7 +2,7 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=1.33.0
+pkgver=1.34.2
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -23,7 +23,7 @@ source=(
 )
 
 sha256sums=(
-    '7cbcb041d9a353be9ebaeb121883cfcd9273a9a199420422a117dbb621b15386'
+    'ab8720a4c958f6f102c1464900d239cedb7eeb3b696f1d710b01a5c8d83a480d'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
 )
 
@@ -48,6 +48,9 @@ prepare() {
     export HUSKY=0
 
     npm install --cache "${srcdir}/npm-cache"
+
+    npm install electron-builder --save-dev --cache "${srcdir}/npm-cache"
+    npm install node-addon-api --save-dev --cache "${srcdir}/npm-cache"
 }
 
 build() {
