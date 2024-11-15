@@ -3,7 +3,7 @@
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
 pkgver=1.34.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.usebruno.com/"
 license=('MIT')
@@ -15,6 +15,8 @@ depends=(
 makedepends=(
     'nvm'
     'asar'
+    'python-setuptools'
+    'python'
 )
 
 source=(
