@@ -4,7 +4,7 @@
 pkgname=gore
 pkgdesc="Yet another Go REPL that works nicely"
 pkgver=0.5.7
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 _gopkg="github.com/x-motemen/gore"
 url="https://${_gopkg}"
@@ -12,10 +12,6 @@ license=('MIT')
 depends=(
   'go'
 )
-
-# no idea why --flto=auto is added to the LDFLAGS with a format
-# causing an issue with the compiler.
-options=('!lto')
 
 source=(
   "${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
@@ -42,12 +38,12 @@ build() {
       -buildmode=pie \
       -mod=readonly \
       -modcacherw \
-      -ldflags "\
-        -linkmode=external \
+      -ldflags "
+        -linkmode=external
         -buildid=''
-        -extldflags='${LDFLAGS}' \
+        -extldflags '${LDFLAGS}'
         -X '${_gopkg}/cli.revision=${pkgver}'
-        " \
+      " \
       -o build ./cmd/gore
 }
 
