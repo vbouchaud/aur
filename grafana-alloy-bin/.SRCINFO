@@ -4,10 +4,13 @@ pkgbase = grafana-alloy-bin
 	pkgrel = 1
 	url = https://github.com/grafana/alloy
 	arch = x86_64
+	arch = aarch64
 	license = apache
 	provides = grafana-alloy
 	conflicts = grafana-alloy
 	source_x86_64 = grafana-alloy-bin-1.5.0.deb::https://github.com/grafana/alloy/releases/download/v1.5.0/alloy-1.5.0-1.amd64.deb
 	sha256sums_x86_64 = 973cfc894600526f5e78ebcbc0efb720158ac2df5def9d18dc526cbfe513f250
+	source_aarch64 = grafana-alloy-bin-1.5.0.deb::https://github.com/grafana/alloy/releases/download/v1.5.0/alloy-1.5.0-1.arm64.deb
+	sha256sums_aarch64 = f0ae57acb1ab9341d389d864fdb85e76eddf31571935a9b0aef5df1d8d6a299f
 
 pkgname = grafana-alloy-bin
