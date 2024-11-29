@@ -1,18 +1,39 @@
 # Maintainer: Ben Leynen <leynenben@gmail.com>
-OPTIONS=(!debug)
+# Contributor: Vianney Bouchaud <aur dot vianney at bouchaud dot org>
+
 pkgname=grafana-alloy-bin
-_binaryname=alloy
-pkgver=v1.4.2
+_pkgname=grafana-alloy
+pkgdesc="OpenTelemetry Collector distribution with programmable pipelines."
+pkgver=1.5.0
 pkgrel=1
-pkgdesc="A vendor-neutral distribution of the OpenTelemetry (OTel) Collector."
 arch=('x86_64')
-_binaryarch=('linux-amd64')
 url="https://github.com/grafana/alloy"
-license=('Apache-2.0')
-makedepends=('unzip' 'bc')
-source=("$pkgname-$pkgver.zip::${url}/releases/download/${pkgver}/${_binaryname}-${_binaryarch}.zip")
-sha256sums=('2e61542d8ff4240f12109249a408cce9a5690f776716062ecc4999df3befc3b7')
+license=('apache')
+conflicts=("${_pkgname}")
+provides=("${_pkgname}")
+
+source_x86_64=(
+    "$pkgname-$pkgver.deb::${url}/releases/download/v${pkgver}/alloy-${pkgver}-1.amd64.deb"
+)
+
+source_aarch64=(
+    "$pkgname-$pkgver.deb::${url}/releases/download/v${pkgver}/alloy-${pkgver}-1.arm64.deb"
+)
+
+sha256sums_x86_64=(
+    "973cfc894600526f5e78ebcbc0efb720158ac2df5def9d18dc526cbfe513f250"
+)
+
+sha256sums_aarch64=(
+    "f0ae57acb1ab9341d389d864fdb85e76eddf31571935a9b0aef5df1d8d6a299f"
+)
 
 package() {
-	install -D -g root -m 0755 -o root "${srcdir}/${_binaryname}-${_binaryarch}" "${pkgdir}/usr/bin/${_binaryname}"
+     tar -vxf data.tar.gz
+
+     install -D -m0755 "${srcdir}/usr/bin/alloy" "${pkgdir}/usr/bin/alloy"
+     install -D -m0644 "${srcdir}/usr/lib/systemd/system/alloy.service" "${pkgdir}/usr/lib/systemd/system/alloy.service"
+     install -D -m0644 "${srcdir}/usr/share/doc/alloy/changelog.gz" "${pkgdir}/usr/share/doc/alloy/changelog.gz"
+     install -D -m0644 "${srcdir}/etc/alloy/config.alloy" "${pkgdir}/etc/alloy/config.alloy"
+     install -D -m0644 "${srcdir}/etc/default/alloy" "${pkgdir}/etc/default/alloy"
 }
