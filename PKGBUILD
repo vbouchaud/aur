@@ -4,7 +4,7 @@
 
 pkgname=vcluster
 pkgdesc='Create fully functional virtual Kubernetes clusters'
-pkgver=0.19.3
+pkgver=0.21.1
 pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
 url="https://vcluster.com"
@@ -16,12 +16,12 @@ depends=(
     'glibc'
 )
 
-_latest() {
-    curl -s https://api.github.com/repos/loft-sh/vcluster/releases | jq -r '. | map(select(.prerelease | not)) | .[0].tag_name'
-}
-
 source=(
     "${pkgname}-${pkgver}.tar.gz::https://github.com/loft-sh/vcluster/archive/refs/tags/v${pkgver}.tar.gz"
+)
+
+sha256sums=(
+    "fd7d955a8a77de17a64c20bce91f24bbbd8626d5d3e7b51daba60e5afa6f4612"
 )
 
 prepare() {
@@ -41,10 +41,10 @@ build() {
        -buildmode=pie \
        -mod=readonly \
        -modcacherw \
-       -ldflags "\
-        -linkmode=external \
-        -buildid='' \
-        -extldflags=\"${LDFLAGS}\"" \
+       -ldflags "
+        -linkmode=external
+        -buildid=''
+        -extldflags '${LDFLAGS}'" \
        -o build/$pkgname ./cmd/vclusterctl/main.go
 }
 
@@ -61,7 +61,3 @@ package() {
     build/"$pkgname" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/$pkgname"
     build/"$pkgname" completion zsh | install -Dm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_$pkgname"
 }
-
-sha256sums=(
-    1d431dfb045c1fd5f65249ffe0452e64f0537c5ac788f88d096e71d90fd0cfb0
-)
