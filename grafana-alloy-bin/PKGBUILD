@@ -12,28 +12,49 @@ license=('apache')
 conflicts=("${_pkgname}")
 provides=("${_pkgname}")
 
+backup=(
+    "etc/alloy/config.alloy"
+    "etc/default/alloy"
+)
+
 source_x86_64=(
     "$pkgname-$pkgver.deb::${url}/releases/download/v${pkgver}/alloy-${pkgver}-1.amd64.deb"
+    'alloy-sysusers.conf'
+    'alloy-tmpfiles.conf'
 )
 
 source_aarch64=(
     "$pkgname-$pkgver.deb::${url}/releases/download/v${pkgver}/alloy-${pkgver}-1.arm64.deb"
+    'alloy-sysusers.conf'
+    'alloy-tmpfiles.conf'
 )
 
 sha256sums_x86_64=(
     "973cfc894600526f5e78ebcbc0efb720158ac2df5def9d18dc526cbfe513f250"
+    "bd1b372bd6ef5f362858a3b6f193f697b85f5da05c46802166d1bb888a54e426"
+    "2da847dc592dabb19b3f77f3bf714348327667090040a741244cab1f6e08306c"
 )
 
 sha256sums_aarch64=(
     "f0ae57acb1ab9341d389d864fdb85e76eddf31571935a9b0aef5df1d8d6a299f"
+    "bd1b372bd6ef5f362858a3b6f193f697b85f5da05c46802166d1bb888a54e426"
+    "2da847dc592dabb19b3f77f3bf714348327667090040a741244cab1f6e08306c"
 )
 
 package() {
      tar -vxf data.tar.gz
 
      install -D -m0755 "${srcdir}/usr/bin/alloy" "${pkgdir}/usr/bin/alloy"
-     install -D -m0644 "${srcdir}/usr/lib/systemd/system/alloy.service" "${pkgdir}/usr/lib/systemd/system/alloy.service"
      install -D -m0644 "${srcdir}/usr/share/doc/alloy/changelog.gz" "${pkgdir}/usr/share/doc/alloy/changelog.gz"
+     
+     # config file
      install -D -m0644 "${srcdir}/etc/alloy/config.alloy" "${pkgdir}/etc/alloy/config.alloy"
      install -D -m0644 "${srcdir}/etc/default/alloy" "${pkgdir}/etc/default/alloy"
+     
+     # user and files to create, ownership and permission to set
+     install -D -m0644 "${srcdir}/alloy-sysusers.conf" "${pkgdir}"/usr/lib/sysusers.d/alloy.conf
+     install -D -m 644 "${srcdir}/alloy-tmpfiles.conf" "${pkgdir}/usr/lib/tmpfiles.d/alloy.conf"
+
+      # service files
+     install -D -m0644 "${srcdir}/usr/lib/systemd/system/alloy.service" "${pkgdir}/usr/lib/systemd/system/alloy.service"
 }
