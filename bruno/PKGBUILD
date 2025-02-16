@@ -2,7 +2,7 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=1.38.1
+pkgver=1.39.0
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -22,13 +22,11 @@ makedepends=(
 source=(
    "${pkgname}-${pkgver}.tar.gz::https://github.com/usebruno/bruno/archive/v${pkgver}.tar.gz"
    com.usebruno.app.Bruno.desktop
-   0001-disable-telemetry.patch
 )
 
 sha256sums=(
-    '468ab677fdb381b20b1de3a3433c4b36c461f9bc85cd1326fdac8f6900f9e8dc'
+    '8ceb42205853f60263cf578fdded50fd5bdc16468cd80f0cd4b0291e37272cb9'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
-    '3690f13e46e5bfc8d45ede5d7ac99d1c23e25190408903c01e15ce3aa9a20d4f'
 )
 
 _ensure_local_nvm() {
@@ -45,8 +43,6 @@ _ensure_local_nvm() {
 prepare() {
     _ensure_local_nvm
     cd "${pkgname}-${pkgver}"
-
-    patch -Np1 -i "${srcdir}/0001-disable-telemetry.patch"
 
     nvm install
 

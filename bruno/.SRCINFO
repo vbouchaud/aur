@@ -1,6 +1,6 @@
 pkgbase = bruno
 	pkgdesc = Opensource API Client for Exploring and Testing APIs
-	pkgver = 1.38.1
+	pkgver = 1.39.0
 	pkgrel = 1
 	url = https://www.usebruno.com/
 	arch = x86_64
@@ -11,11 +11,9 @@ pkgbase = bruno
 	makedepends = python
 	depends = electron31
 	depends = alsa-lib
-	source = bruno-1.38.1.tar.gz::https://github.com/usebruno/bruno/archive/v1.38.1.tar.gz
+	source = bruno-1.39.0.tar.gz::https://github.com/usebruno/bruno/archive/v1.39.0.tar.gz
 	source = com.usebruno.app.Bruno.desktop
-	source = 0001-disable-telemetry.patch
-	sha256sums = 468ab677fdb381b20b1de3a3433c4b36c461f9bc85cd1326fdac8f6900f9e8dc
+	sha256sums = 8ceb42205853f60263cf578fdded50fd5bdc16468cd80f0cd4b0291e37272cb9
 	sha256sums = 7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051
-	sha256sums = 3690f13e46e5bfc8d45ede5d7ac99d1c23e25190408903c01e15ce3aa9a20d4f
 
 pkgname = bruno
