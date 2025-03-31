@@ -1,15 +1,15 @@
 pkgbase = kubernetes-bin
 	pkgdesc = Kubernetes.io server binary
-	pkgver = 1.30.0
+	pkgver = 1.32.3
 	pkgrel = 1
 	url = https://kubernetes.io
 	arch = x86_64
 	arch = aarch64
 	license = apache
 	conflicts = kubernetes
-	source_x86_64 = kubernetes-1.30.0.tgz::https://dl.k8s.io/v1.30.0/kubernetes-node-linux-amd64.tar.gz
-	sha512sums_x86_64 = e3e8f443a5397029a26a30852f47a9406dc17622638a7b03d37b384283880503af85d134d2a5dfdcfd7a0a5cb11eef8312b37dec77c90062e29d7e0ea1da6026
-	source_aarch64 = kubernetes-1.30.0.tgz::https://dl.k8s.io/v1.30.0/kubernetes-node-linux-arm64.tar.gz
+	source_x86_64 = kubernetes-1.32.3.tgz::https://dl.k8s.io/v1.32.3/kubernetes-node-linux-amd64.tar.gz
+	sha512sums_x86_64 = d55e611f26b2146c05f9cb5f3e5dad2af5cf509aa16fbdc23612247bd3701c4de9dc0a3ce70a6f050f0ea7eef8ecd0f7b479f45489281abb8f11c8e8e69910b1
+	source_aarch64 = kubernetes-1.32.3.tgz::https://dl.k8s.io/v1.32.3/kubernetes-node-linux-arm64.tar.gz
 	sha512sums_aarch64 = d1299f54a2ec4343eb23be36071e3560f339d535b4c2eeb60c09cf40b3357f4371ca198aa4af0c41bde73bef1221a839c846a9f9b497f47f2fdf553238a7dab9
 
 pkgname = kubeadm-bin
