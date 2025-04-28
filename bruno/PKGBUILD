@@ -7,6 +7,7 @@ pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
 license=('MIT')
+conflicts=('bruno-bin')
 _electron=electron33
 depends=(
     "${_electron}"
