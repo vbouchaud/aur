@@ -1,7 +1,7 @@
 pkgbase = bruno-git
 	pkgdesc = Opensource API Client for Exploring and Testing APIs
 	pkgver = 1.39.0.r0.gdfb0b1b96
-	pkgrel = 1
+	pkgrel = 2
 	url = https://www.usebruno.com/
 	arch = x86_64
 	license = MIT
@@ -13,6 +13,7 @@ pkgbase = bruno-git
 	depends = alsa-lib
 	provides = bruno
 	conflicts = bruno
+	conflicts = bruno-bin
 	source = bruno::git+https://github.com/usebruno/bruno#branch=main
 	source = com.usebruno.app.Bruno.desktop
 	sha256sums = SKIP

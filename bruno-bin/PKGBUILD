@@ -4,12 +4,12 @@ pkgname=bruno-bin
 _pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
 pkgver=2.2.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.usebruno.com/"
 license=('MIT')
 provides=('bruno')
-conflicts=('bruno')
+conflicts=('bruno' 'bruno-git')
 depends=(
     'c-ares'
     'gtk3'
