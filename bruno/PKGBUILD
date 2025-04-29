@@ -2,7 +2,7 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=2.0.1
+pkgver=2.2.0
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -25,7 +25,7 @@ source=(
 )
 
 sha256sums=(
-    'e7eafd5660e523fe18b698be1c7bde31a450bf4c6598430d073363b71f292f7d'
+    'ebb96d34076b87cc755c4577b7e666177d53337581075bb8e33e50d53bd8dd56'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
 )
 
@@ -46,33 +46,46 @@ prepare() {
 
     nvm install
 
-    # https://typicode.github.io/husky/how-to.html#ci-server-and-docker
     export HUSKY=0
-
-    npm install --cache "${srcdir}/npm-cache"
-
-    npm install electron-builder --save-dev --cache "${srcdir}/npm-cache"
+    npm install --cache "${srcdir}/npm-cache" --include dev
     npm install node-addon-api --save-dev --cache "${srcdir}/npm-cache"
 }
 
 build() {
     _ensure_local_nvm
-    # export NODE_ENV=production
+    export NODE_ENV=production
     export NODE_OPTIONS=--openssl-legacy-provider
 
     cd "${pkgname}-${pkgver}"
 
-    npm run build:graphql-docs
-    npm run build:bruno-query
-    npm run build:bruno-common
     npm run sandbox:bundle-libraries --workspace=packages/bruno-js
-    npm run build:web
+
+    npm run build --workspace=packages/bruno-common
+    npm run build --workspace=packages/bruno-requests
+    npm run build --workspace=packages/bruno-converters
+    npm run build --workspace=packages/bruno-query
+    npm run build --workspace=packages/bruno-graphql-docs
+
+    npm run build --workspace=packages/bruno-app
+
+    rm -rf packages/bruno-electron/{out,web}
+    mkdir -p packages/bruno-electron/web
+    cp -r packages/bruno-app/dist/* packages/bruno-electron/web
+
+    sed -i -e 's@/static/@static/@g' packages/bruno-electron/web/**.html
+    sed -i -e 's@/static/font@../../static/font@g' packages/bruno-electron/web/static/css/**.**.css
+
+    find packages/bruno-electron/web -name '*.map' -type f -delete
 
     electronDist="/usr/lib/${_electron}"
     electronVer="$(cat ${electronDist}/version)"
-    sed -i -e "s~\"dist:linux\":.*~\"dist:linux\": \"electron-builder --linux --x64 --dir --config electron-builder-config.js -c.electronDist=${electronDist} -c.electronVersion=${electronVer}\",~g" packages/bruno-electron/package.json
 
-    npm run build:electron:linux
+    npm run pack --workspace=packages/bruno-electron -- \
+        --linux \
+        --x64 \
+        --config electron-builder-config.js \
+        -c.electronDist=${electronDist} \
+        -c.electronVersion=${electronVer}
 }
 
 package() {
