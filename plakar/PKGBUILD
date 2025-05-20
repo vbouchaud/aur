@@ -5,39 +5,48 @@ pkgdesc="Backup for lazy^W smart engineers."
 pkgver=1.0.1
 pkgrel=1
 arch=('x86_64' 'armv7l' 'armv7h' 'aarch64')
-url="https://github.com/PlakarKorp/plakar"
+url="https://plakar.io/"
 license=('ISC')
 makedepends=(
   'go'
 )
 
 source=(
-  "${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
+  "${pkgname}-${pkgver}.tar.gz::https://github.com/PlakarKorp/plakar/archive/v${pkgver}.tar.gz"
 )
 
 sha256sums=(
   "3d1cc92fbae24ec1debd5d19f1aeb5443ca1537fe4c762ca529c9f9f1e744c78"
 )
 
-prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
+_ensure_common_env() {
   export GOPATH="$srcdir/gopath"
-  go mod vendor -modcacherw
-}
-
-check() {
-  cd "$srcdir/$pkgname-$pkgver"
-  go test ./...
-}
-
-build() {
-  export GOPATH="$srcdir"/gopath
   export CGO_CPPFLAGS="${CPPFLAGS}"
   export CGO_CFLAGS="${CFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
   export CGO_LDFLAGS="${LDFLAGS}"
   export CGO_ENABLED=1
+}
 
+prepare() {
+  _ensure_common_env
+  cd "$srcdir/$pkgname-$pkgver"
+
+  go mod vendor \
+    -modcacherw
+}
+
+check() {
+  _ensure_common_env
+  cd "$srcdir/$pkgname-$pkgver"
+
+  go test \
+    -mod=vendor \
+    ./...
+}
+
+build() {
+  _ensure_common_env
   cd "$srcdir/$pkgname-$pkgver"
 
   go build \
@@ -48,10 +57,10 @@ build() {
       -linkmode=external \
       -buildid=''
       -extldflags \"${LDFLAGS}\"" \
-    -o bin/plakar ./cmd/plakar
+    -o plakar ./cmd/plakar
 }
 
 package() {
-  install -D -m0755 $srcdir/$pkgname-$pkgver/bin/plakar $pkgdir/usr/bin/plakar
-  install -D -m0644 $srcdir/$pkgname-$pkgver/LICENSE $pkgdir/usr/share/licenses/plakar/LICENSE
+  install -D -m0755 "$srcdir/$pkgname-$pkgver/plakar" "$pkgdir/usr/bin/plakar"
+  install -D -m0644 "$srcdir/$pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/plakar/LICENSE"
 }
