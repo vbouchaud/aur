@@ -22,4 +22,6 @@ package() {
   do
 	  install -Dm644 "$command" "$pkgdir/usr/share/man/man1/$(basename $command)"
   done
+
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
