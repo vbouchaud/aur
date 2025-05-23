@@ -1,27 +1,61 @@
 pkgname=plakar
 pkgver=1.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="plakar is a backup solution"
-url="https://github.com/PlakarKorp/plakar"
 source=("$pkgname-$pkgver.tar.gz::https://github.com/PlakarKorp/plakar/archive/v$pkgver.tar.gz")
+url="https://plakar.io/"
 arch=('i686' 'pentium4' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
 license=('ISC')
 makedepends=('go')
 sha256sums=('3d1cc92fbae24ec1debd5d19f1aeb5443ca1537fe4c762ca529c9f9f1e744c78')
 
-build () {
+_ensure_common_env() {
+  export GOPATH="$srcdir/gopath"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export CGO_ENABLED=1
+}
+
+prepare() {
+  _ensure_common_env
   cd "$srcdir/$pkgname-$pkgver"
-  go build -v . 
+
+  go mod vendor \
+    -modcacherw
+}
+
+check() {
+  _ensure_common_env
+  cd "$srcdir/$pkgname-$pkgver"
+
+  go test \
+    -mod=vendor \
+    ./...
+}
+
+build() {
+  _ensure_common_env
+  cd "$srcdir/$pkgname-$pkgver"
+
+  go build \
+    -trimpath \
+    -buildmode=pie \
+    -mod=vendor \
+    -ldflags "\
+      -linkmode=external \
+      -buildid=''
+      -extldflags \"${LDFLAGS}\"" \
+    -v .
+
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  
-  install -Dm755 plakar "${pkgdir}/usr/bin/plakar"
-  for command in $(find . -name "*.1")
+  install -D -m0755 "$srcdir/$pkgname-$pkgver/plakar" "$pkgdir/usr/bin/plakar"
+  for command in $(find "$srcdir/$pkgname-$pkgver/cmd" -name "*.1" -type f)
   do
-	  install -Dm644 "$command" "$pkgdir/usr/share/man/man1/$(basename $command)"
+    install -D -m0644 "$command" "$pkgdir/usr/share/man/man1/$(basename $command)"
   done
-
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -D -m0644 "$srcdir/$pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/plakar/LICENSE"
 }
