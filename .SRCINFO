@@ -1,7 +1,7 @@
 pkgbase = plakar
 	pkgdesc = plakar is a backup solution
-	pkgver = 1.0.1
-	pkgrel = 2
+	pkgver = 1.0.2
+	pkgrel = 1
 	url = https://plakar.io/
 	arch = i686
 	arch = pentium4
@@ -12,7 +12,7 @@ pkgbase = plakar
 	arch = aarch64
 	license = ISC
 	makedepends = go
-	source = plakar-1.0.1.tar.gz::https://github.com/PlakarKorp/plakar/archive/v1.0.1.tar.gz
-	sha256sums = 3d1cc92fbae24ec1debd5d19f1aeb5443ca1537fe4c762ca529c9f9f1e744c78
+	source = plakar-1.0.2.tar.gz::https://github.com/PlakarKorp/plakar/archive/v1.0.2.tar.gz
+	sha256sums = 425f551c5ade725bb93e3e33840b1d16187a6f8ec47abfe4830deefc5b70b2f8
 
 pkgname = plakar
