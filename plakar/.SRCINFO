@@ -1,7 +1,7 @@
 pkgbase = plakar
 	pkgdesc = plakar is a backup solution
 	pkgver = 1.0.4
-	pkgrel = 1
+	pkgrel = 2
 	url = https://plakar.io/
 	arch = i686
 	arch = pentium4

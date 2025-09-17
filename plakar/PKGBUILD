@@ -1,6 +1,6 @@
 pkgname=plakar
 pkgver=1.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc="plakar is a backup solution"
 source=("$pkgname-$pkgver.tar.gz::https://github.com/PlakarKorp/plakar/archive/v$pkgver.tar.gz")
 url="https://plakar.io/"
@@ -53,9 +53,13 @@ build() {
 
 package() {
   install -D -m0755 "$srcdir/$pkgname-$pkgver/plakar" "$pkgdir/usr/bin/plakar"
-  for command in $(find "$srcdir/$pkgname-$pkgver/cmd" -name "*.1" -type f)
+  for command in $(find "$srcdir/$pkgname-$pkgver" -name "*.1" -type f)
   do
     install -D -m0644 "$command" "$pkgdir/usr/share/man/man1/$(basename $command)"
+  done
+  for command in $(find "$srcdir/$pkgname-$pkgver" -name "*.7" -type f)
+  do
+    install -D -m0644 "$command" "$pkgdir/usr/share/man/man7/$(basename $command)"
   done
   install -D -m0644 "$srcdir/$pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/plakar/LICENSE"
 }
