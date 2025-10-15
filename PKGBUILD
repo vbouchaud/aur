@@ -1,13 +1,13 @@
 pkgname=plakar
-pkgver=1.0.4
-pkgrel=2
+pkgver=1.0.5
+pkgrel=1
 pkgdesc="plakar is a backup solution"
 source=("$pkgname-$pkgver.tar.gz::https://github.com/PlakarKorp/plakar/archive/v$pkgver.tar.gz")
 url="https://plakar.io/"
 arch=('i686' 'pentium4' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
 license=('ISC')
 makedepends=('go')
-sha256sums=('f8a2e04366e383a69f1077fb0a3607a44418ab98da13fa4718a79ec633dd975c')
+sha256sums=('403062192081f65aaab598ec1837a6c52a0cf3ca22d4c77c658d83be5edb66b0')
 
 _ensure_common_env() {
   export GOPATH="$srcdir/gopath"
