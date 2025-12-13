@@ -2,19 +2,18 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=2.8.1
+pkgver=2.15.1
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
 license=('MIT')
-_electron=electron33
+_electron=electron37
 depends=(
     "${_electron}"
     'alsa-lib'
 )
 makedepends=(
     'nvm'
-    'asar'
     'python-setuptools'
     'python'
 )
@@ -25,7 +24,7 @@ source=(
 )
 
 sha256sums=(
-    'c903ed721be0857f0218269ecc942ad8dbbf3f75e78b5ac0b74b59232a14f0ff'
+    'afb05828deeb859d8a2f1731ddbca407e77eb8e3af962bf3ad164942d2022abc'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
 )
 
@@ -65,7 +64,7 @@ build() {
     npm run build --workspace=packages/bruno-converters
     npm run build --workspace=packages/bruno-query
     npm run build --workspace=packages/bruno-graphql-docs
-
+    npm run build --workspace=packages/bruno-filestore
     npm run build --workspace=packages/bruno-app
 
     rm -rf packages/bruno-electron/{out,web}
@@ -101,7 +100,7 @@ EOD
 
     install -Dm0644 license.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -d "${pkgdir}/usr/lib/${pkgname}/"
-    asar e packages/bruno-electron/out/linux-unpacked/resources/app.asar "${pkgdir}/usr/lib/${pkgname}/"
+    npx --no asar e packages/bruno-electron/out/linux-unpacked/resources/app.asar "${pkgdir}/usr/lib/${pkgname}/"
 
     for i in 16 24 48 64 128 256 512 1024; do
         install -Dm644 "packages/bruno-electron/resources/icons/png/${i}x${i}.png" "${pkgdir}/usr/share/icons/hicolor/${i}x${i}/apps/com.usebruno.app.Bruno.png"
