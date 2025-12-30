@@ -6,7 +6,7 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/PlakarKorp/plakar/archive/v
 url="https://plakar.io/"
 arch=('i686' 'pentium4' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
 license=('ISC')
-makedepends=('go')
+makedepends=('go' 'fuse2')
 sha256sums=('5f9af49e9957b2fc659f0c9192db748785c95a1319290e69469df971fe3eeb9e')
 
 _ensure_common_env() {
