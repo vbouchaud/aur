@@ -12,6 +12,7 @@ pkgbase = plakar
 	arch = aarch64
 	license = ISC
 	makedepends = go
+	makedepends = fuse2
 	source = plakar-1.0.6.tar.gz::https://github.com/PlakarKorp/plakar/archive/v1.0.6.tar.gz
 	sha256sums = 5f9af49e9957b2fc659f0c9192db748785c95a1319290e69469df971fe3eeb9e
 
