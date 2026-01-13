@@ -2,7 +2,7 @@
 
 pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=2.15.1
+pkgver=3.0.2
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -24,7 +24,7 @@ source=(
 )
 
 sha256sums=(
-    'afb05828deeb859d8a2f1731ddbca407e77eb8e3af962bf3ad164942d2022abc'
+    '0f926491e1c2ce52a63b62a81d0dd204f5becd0e19732e76b9c5673a68e138af'
     '7bad0d66e67fdaaf99d1b7b32ba2f119b7d6dba12ecfdb398c39ee3c81bbe051'
 )
 
@@ -64,6 +64,7 @@ build() {
     npm run build --workspace=packages/bruno-converters
     npm run build --workspace=packages/bruno-query
     npm run build --workspace=packages/bruno-graphql-docs
+    npm run build --workspace=packages/bruno-schema-types
     npm run build --workspace=packages/bruno-filestore
     npm run build --workspace=packages/bruno-app
 

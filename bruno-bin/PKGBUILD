@@ -3,7 +3,7 @@
 pkgname=bruno-bin
 _pkgname=bruno
 pkgdesc="Opensource API Client for Exploring and Testing APIs"
-pkgver=2.15.1
+pkgver=3.0.2
 pkgrel=1
 arch=('x86_64')
 url="https://www.usebruno.com/"
@@ -19,14 +19,14 @@ depends=(
     'alsa-lib'
 )
 
-sha256sums=(
-    "a01d1e50287ab477fa2f9e15b7fa1bb88f0429396011df5646fdd1e42966a28b"
-    "8891070a847e5047bf77d38d88d7dfbab1beab41e37c802b9f5b23f2bbb9c7be"
-)
-
 source=(
     "https://github.com/usebruno/bruno/releases/download/v${pkgver}/bruno_${pkgver}_amd64_linux.deb"
     "LICENSE-$pkgver::https://raw.githubusercontent.com/usebruno/bruno/v${pkgver}/license.md"
+)
+
+sha256sums=(
+    "7337897b7729b01284c1ea5f365076e56f04c9937abbc749b847451b6d568271"
+    "8891070a847e5047bf77d38d88d7dfbab1beab41e37c802b9f5b23f2bbb9c7be"
 )
 
 package() {
