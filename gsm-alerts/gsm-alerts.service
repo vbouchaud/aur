@@ -1,7 +1,0 @@
-[Unit]
-Description=Gsm alerting service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/share/gsm-alerts/gsm-alerts.sh
-User=root
