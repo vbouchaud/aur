@@ -1,5 +1,0 @@
-[gore]
-source = "github"
-use_latest_release = true
-github = "x-motemen/gore"
-prefix = "v"
