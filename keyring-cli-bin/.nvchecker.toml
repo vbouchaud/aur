@@ -1,0 +1,5 @@
+[keyring-cli-bin]
+source = "github"
+use_latest_release = true
+github = "vbouchaud/keyring"
+prefix = "v"

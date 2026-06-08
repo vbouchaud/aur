@@ -1,0 +1,5 @@
+[k8s-ldap-auth-bin]
+source = "github"
+use_latest_release = true
+github = "HopopOps/k8s-ldap-auth"
+prefix = "v"

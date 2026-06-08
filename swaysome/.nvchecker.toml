@@ -1,0 +1,5 @@
+[swaysome]
+source = "gitlab"
+use_max_tag = true
+gitlab = "hyask/swaysome"
+prefix = "v"
