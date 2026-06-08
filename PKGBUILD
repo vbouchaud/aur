@@ -4,7 +4,7 @@
 pkgname=gore
 pkgdesc="Yet another Go REPL that works nicely"
 pkgver=0.6.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 _gopkg="github.com/x-motemen/gore"
 url="https://${_gopkg}"
