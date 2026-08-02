@@ -3,7 +3,7 @@
 
 pkgname=gore
 pkgdesc="Yet another Go REPL that works nicely"
-pkgver=0.6.2
+pkgver=0.7.0
 pkgrel=1
 arch=('x86_64')
 _gopkg="github.com/x-motemen/gore"
@@ -17,7 +17,7 @@ source=(
   "${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
 )
 
-sha256sums=('0bfea5f42c2a68e85ae71070d7b170be5db66642f9792b0e1e1145fc87196c00')
+sha256sums=('88e2f6f52eb5fd4b5359d822f9f3fcb99a0f868eff1e4da19880bebba3143718')
 
 prepare(){
   cd $pkgname-$pkgver
